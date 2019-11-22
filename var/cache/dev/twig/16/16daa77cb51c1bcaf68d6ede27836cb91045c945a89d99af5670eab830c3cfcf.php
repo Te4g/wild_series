@@ -66,6 +66,20 @@ class __TwigTemplate_78378246f5e5be6e79581a5c3e1813438c3509a2a2d66729096874139e1
 
         // line 4
         echo "    <h1>Bienvenue !</h1>
+
+    <a href=\"";
+        // line 6
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_show", ["slug" => "walking-dead"]);
+        echo "\">
+        Testing show() method from WildController with a real program s slug.
+    </a>
+    <br>
+    <a href=\"";
+        // line 10
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_index");
+        echo "\">
+        Testing index() method from WildController to view all programs.
+    </a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -87,7 +101,7 @@ class __TwigTemplate_78378246f5e5be6e79581a5c3e1813438c3509a2a2d66729096874139e1
 
     public function getDebugInfo()
     {
-        return array (  68 => 4,  58 => 3,  35 => 1,);
+        return array (  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -96,6 +110,14 @@ class __TwigTemplate_78378246f5e5be6e79581a5c3e1813438c3509a2a2d66729096874139e1
 
 {% block body %}
     <h1>Bienvenue !</h1>
+
+    <a href=\"{{ path('wild_show', { 'slug': \"walking-dead\" }) }}\">
+        Testing show() method from WildController with a real program s slug.
+    </a>
+    <br>
+    <a href=\"{{ path('wild_index') }}\">
+        Testing index() method from WildController to view all programs.
+    </a>
 {% endblock %}", "home.html.twig", "/home/te4g/PhpstormProjects/symfony_quest/wild-series/templates/home.html.twig");
     }
 }
