@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(addForm) }}
+
+    {{ form_row(addForm.name) }}
+
+    <button class="btn btn-primary">{{ button_label|default('Add') }}</button>
+
+    {{ form_end(addForm) }}
+
+{% endblock %}

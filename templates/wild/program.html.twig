@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for program in programs %}
+        <div>
+            <h2>{{ program.title }} - Catégorie : {{ program.category.name }}</h2>
+            <p>{{ program.summary }}</p>
+            <p>Liste des saisons</p>
+            <ul>
+                {% for season in program.seasons %}
+                    <li><a href="/wild/season/{{ season.id }}">{{ season.year }}</a></li>
+                    {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        Aucune série trouvée.
+    {% endfor %}
+    <a href="{{ path('app_index') }}">
+        Retour à l'accueil
+    </a>
+{% endblock %}

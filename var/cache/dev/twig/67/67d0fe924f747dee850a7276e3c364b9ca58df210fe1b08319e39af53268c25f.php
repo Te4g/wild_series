@@ -110,9 +110,11 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
             <h2>";
             // line 9
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 9), "html", null, true);
-            echo " / ";
+            echo " / <a href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["program"], "title", [], "any", false, false, false, 9)]), "html", null, true);
+            echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "title", [], "any", false, false, false, 9), "html", null, true);
-            echo " - Catégorie : ";
+            echo "</a> - Catégorie : ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["program"], "category", [], "any", false, false, false, 9), "name", [], "any", false, false, false, 9), "html", null, true);
             echo "</h2>
             <p>";
@@ -145,6 +147,27 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
         echo "\">
         Retour à l'accueil
     </a>
+
+
+    ";
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), 'form_start');
+        echo "
+
+    ";
+        // line 22
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "name", [], "any", false, false, false, 22), 'row');
+        echo "
+
+    <button class=\"btn\">";
+        // line 24
+        echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 24, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+        echo "</button>
+
+    ";
+        // line 26
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), 'form_end');
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -166,7 +189,7 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
 
     public function getDebugInfo()
     {
-        return array (  143 => 15,  136 => 13,  120 => 10,  112 => 9,  109 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  169 => 26,  164 => 24,  159 => 22,  154 => 20,  145 => 15,  138 => 13,  122 => 10,  112 => 9,  109 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -179,7 +202,7 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
     <h1>Toutes les séries de la table program : </h1>
     {% for program in programs %}
         <div>
-            <h2>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
+            <h2>{{ loop.index }} / <a href=\"{{ path('wild_show', {'slug': program.title }) }}\">{{ program.title }}</a> - Catégorie : {{ program.category.name }}</h2>
             <p>{{ program.summary }}</p>
         </div>
     {% else %}
@@ -188,6 +211,19 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
     <a href=\"{{ path('app_index') }}\">
         Retour à l'accueil
     </a>
-{% endblock %}", "wild/index.html.twig", "/home/te4g/PhpstormProjects/symfony_quest/wild-series/templates/wild/index.html.twig");
+
+
+    {{ form_start(form) }}
+
+    {{ form_row(form.name) }}
+
+    <button class=\"btn\">{{ button_label|default('Save') }}</button>
+
+    {{ form_end(form) }}
+{% endblock %}
+
+
+
+", "wild/index.html.twig", "/home/te4g/PhpstormProjects/symfony_quest/wild-series/templates/wild/index.html.twig");
     }
 }

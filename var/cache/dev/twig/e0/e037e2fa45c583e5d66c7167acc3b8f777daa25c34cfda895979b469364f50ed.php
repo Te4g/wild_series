@@ -63,6 +63,7 @@ class __TwigTemplate_74bedfc73d057abd06e9aadd3f34e7dd8eb6d6eeed1c0086ddcb087e32e
         echo "<header>
     <nav class=\"navbar navbar-light bg-light\">
         <a class=\"navbar-brand btn btn-primary\" href=\"/\">Accueil</a>
+        <a class =\"btn btn-secondary\" href=\"/wild\">Liste des séries</a>
     </nav>
 </header>
 ";
@@ -90,6 +91,7 @@ class __TwigTemplate_74bedfc73d057abd06e9aadd3f34e7dd8eb6d6eeed1c0086ddcb087e32e
 <header>
     <nav class=\"navbar navbar-light bg-light\">
         <a class=\"navbar-brand btn btn-primary\" href=\"/\">Accueil</a>
+        <a class =\"btn btn-secondary\" href=\"/wild\">Liste des séries</a>
     </nav>
 </header>
 {%  endblock %}", "navbar.html.twig", "/home/te4g/PhpstormProjects/symfony_quest/wild-series/templates/navbar.html.twig");
