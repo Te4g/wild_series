@@ -110,9 +110,11 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
             <h2>";
             // line 9
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 9), "html", null, true);
-            echo " / ";
+            echo " / <a href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["program"], "title", [], "any", false, false, false, 9)]), "html", null, true);
+            echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "title", [], "any", false, false, false, 9), "html", null, true);
-            echo " - Catégorie : ";
+            echo "</a> - Catégorie : ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["program"], "category", [], "any", false, false, false, 9), "name", [], "any", false, false, false, 9), "html", null, true);
             echo "</h2>
             <p>";
@@ -166,7 +168,7 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
 
     public function getDebugInfo()
     {
-        return array (  143 => 15,  136 => 13,  120 => 10,  112 => 9,  109 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  145 => 15,  138 => 13,  122 => 10,  112 => 9,  109 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -179,7 +181,7 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
     <h1>Toutes les séries de la table program : </h1>
     {% for program in programs %}
         <div>
-            <h2>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
+            <h2>{{ loop.index }} / <a href=\"{{ path('wild_show', {'slug': program.title }) }}\">{{ program.title }}</a> - Catégorie : {{ program.category.name }}</h2>
             <p>{{ program.summary }}</p>
         </div>
     {% else %}
@@ -188,6 +190,10 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
     <a href=\"{{ path('app_index') }}\">
         Retour à l'accueil
     </a>
-{% endblock %}", "wild/index.html.twig", "/home/te4g/PhpstormProjects/symfony_quest/wild-series/templates/wild/index.html.twig");
+{% endblock %}
+
+
+
+", "wild/index.html.twig", "/home/te4g/PhpstormProjects/symfony_quest/wild-series/templates/wild/index.html.twig");
     }
 }

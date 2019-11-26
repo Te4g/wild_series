@@ -69,7 +69,7 @@ class __TwigTemplate_78378246f5e5be6e79581a5c3e1813438c3509a2a2d66729096874139e1
 
     <a href=\"";
         // line 6
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_show", ["slug" => "walking-dead"]);
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_show", ["slug" => "walking_dead"]);
         echo "\">
         Testing show() method from WildController with a real program s slug.
     </a>
@@ -111,7 +111,7 @@ class __TwigTemplate_78378246f5e5be6e79581a5c3e1813438c3509a2a2d66729096874139e1
 {% block body %}
     <h1>Bienvenue !</h1>
 
-    <a href=\"{{ path('wild_show', { 'slug': \"walking-dead\" }) }}\">
+    <a href=\"{{ path('wild_show', { 'slug': \"walking_dead\" }) }}\">
         Testing show() method from WildController with a real program s slug.
     </a>
     <br>
