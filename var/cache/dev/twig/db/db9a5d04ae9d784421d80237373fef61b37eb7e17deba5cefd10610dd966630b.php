@@ -63,12 +63,16 @@ class __TwigTemplate_c1dbeab3e984a89e00cadea6c500a613a923317758a6d831464a5153568
         // line 11
         $this->displayBlock('header', $context, $blocks);
         // line 14
-        echo "        ";
-        $this->displayBlock('body', $context, $blocks);
+        echo "        <div class=\"container-fluid\">
+        ";
         // line 15
-        echo "        ";
+        $this->displayBlock('body', $context, $blocks);
+        // line 16
+        echo "        </div>
+        ";
+        // line 17
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 18
+        // line 20
         echo "    </body>
 </html>
 ";
@@ -145,7 +149,7 @@ class __TwigTemplate_c1dbeab3e984a89e00cadea6c500a613a923317758a6d831464a5153568
 
     }
 
-    // line 14
+    // line 15
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -163,7 +167,7 @@ class __TwigTemplate_c1dbeab3e984a89e00cadea6c500a613a923317758a6d831464a5153568
 
     }
 
-    // line 15
+    // line 17
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -173,7 +177,7 @@ class __TwigTemplate_c1dbeab3e984a89e00cadea6c500a613a923317758a6d831464a5153568
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 16
+        // line 18
         echo "             ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
@@ -193,7 +197,7 @@ class __TwigTemplate_c1dbeab3e984a89e00cadea6c500a613a923317758a6d831464a5153568
 
     public function getDebugInfo()
     {
-        return array (  177 => 16,  167 => 15,  149 => 14,  139 => 13,  136 => 12,  126 => 11,  113 => 7,  103 => 6,  84 => 5,  72 => 18,  69 => 15,  66 => 14,  64 => 11,  60 => 9,  58 => 6,  54 => 5,  48 => 1,);
+        return array (  181 => 18,  171 => 17,  153 => 15,  143 => 13,  140 => 12,  130 => 11,  117 => 7,  107 => 6,  88 => 5,  76 => 20,  74 => 17,  71 => 16,  69 => 15,  66 => 14,  64 => 11,  60 => 9,  58 => 6,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -211,7 +215,9 @@ class __TwigTemplate_c1dbeab3e984a89e00cadea6c500a613a923317758a6d831464a5153568
         {% block header %}
              {% include 'navbar.html.twig' %}
         {% endblock %}
+        <div class=\"container-fluid\">
         {% block body %}{% endblock %}
+        </div>
         {% block javascripts %}
              {{ encore_entry_script_tags('app') }}
         {% endblock %}
