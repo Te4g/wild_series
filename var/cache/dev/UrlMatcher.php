@@ -57,12 +57,12 @@ return [
                 .')'
                 .'|/wild/(?'
                     .'|s(?'
-                        .'|how(?:/([a-z0-9-_\\s]+))?(*:355)'
-                        .'|eason/([^/]++)(*:377)'
+                        .'|how(?:/([^/]++))?(*:348)'
+                        .'|eason/([^/]++)(*:370)'
                     .')'
-                    .'|category/([^/]++)(*:403)'
-                    .'|program/([^/]++)(*:427)'
-                    .'|episode/([^/]++)(*:451)'
+                    .'|category/([^/]++)(*:396)'
+                    .'|program/([^/]++)(*:420)'
+                    .'|episode/([^/]++)(*:444)'
                 .')'
             .')/?$}sDu',
     ],
@@ -83,11 +83,11 @@ return [
         288 => [[['_route' => 'season_show', '_controller' => 'App\\Controller\\SeasonController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         301 => [[['_route' => 'season_edit', '_controller' => 'App\\Controller\\SeasonController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         309 => [[['_route' => 'season_delete', '_controller' => 'App\\Controller\\SeasonController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        355 => [[['_route' => 'wild_show', 'slug' => null, '_controller' => 'App\\Controller\\WildController::show'], ['slug'], null, null, false, true, null]],
-        377 => [[['_route' => 'wild_season', '_controller' => 'App\\Controller\\WildController::showBySeason'], ['id'], null, null, false, true, null]],
-        403 => [[['_route' => 'wild_category', '_controller' => 'App\\Controller\\WildController::showByCategory'], ['categoryName'], null, null, false, true, null]],
-        427 => [[['_route' => 'wild_program', '_controller' => 'App\\Controller\\WildController::showByProgram'], ['slug'], null, null, false, true, null]],
-        451 => [
+        348 => [[['_route' => 'wild_show', 'slug' => null, '_controller' => 'App\\Controller\\WildController::show'], ['slug'], null, null, false, true, null]],
+        370 => [[['_route' => 'wild_season', '_controller' => 'App\\Controller\\WildController::showBySeason'], ['id'], null, null, false, true, null]],
+        396 => [[['_route' => 'wild_category', '_controller' => 'App\\Controller\\WildController::showByCategory'], ['categoryName'], null, null, false, true, null]],
+        420 => [[['_route' => 'wild_program', '_controller' => 'App\\Controller\\WildController::showByProgram'], ['slug'], null, null, false, true, null]],
+        444 => [
             [['_route' => 'wild_episode', '_controller' => 'App\\Controller\\WildController::showEpisode'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

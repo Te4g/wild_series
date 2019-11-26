@@ -2,7 +2,11 @@
 <header>
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand btn btn-primary" href="/">Accueil</a>
-        <a class ="btn btn-secondary" href="/wild">Liste des séries</a>
+        <div>
+        <a class ="btn btn-secondary" href="{{ path('program_index') }}">Liste des séries</a>
+        <a class ="btn btn-secondary" href="{{ path('season_index') }}">Liste des saisons</a>
+        <a class ="btn btn-secondary" href="{{ path('episode_index') }}">Liste des épisodes</a>
+        </div>
     </nav>
 </header>
 {%  endblock %}

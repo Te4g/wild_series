@@ -118,10 +118,10 @@ class __TwigTemplate_59d2908e0efe5679def4e7add2f148d5e62984753936177490aa47af71e
             // line 23
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "summary", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
-                <td>";
+                <td><img class=\"w-100\" src=\"";
             // line 24
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "poster", [], "any", false, false, false, 24), "html", null, true);
-            echo "</td>
+            echo "\"></td>
                 <td>
                     <a href=\"";
             // line 26
@@ -150,7 +150,7 @@ class __TwigTemplate_59d2908e0efe5679def4e7add2f148d5e62984753936177490aa47af71e
         echo "        </tbody>
     </table>
 
-    <a href=\"";
+    <a class=\"btn btn-primary\" href=\"";
         // line 38
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("program_new");
         echo "\">Create new</a>
@@ -203,7 +203,7 @@ class __TwigTemplate_59d2908e0efe5679def4e7add2f148d5e62984753936177490aa47af71e
                 <td>{{ program.id }}</td>
                 <td>{{ program.title }}</td>
                 <td>{{ program.summary }}</td>
-                <td>{{ program.poster }}</td>
+                <td><img class=\"w-100\" src=\"{{ program.poster }}\"></td>
                 <td>
                     <a href=\"{{ path('program_show', {'id': program.id}) }}\">show</a>
                     <a href=\"{{ path('program_edit', {'id': program.id}) }}\">edit</a>
@@ -217,7 +217,7 @@ class __TwigTemplate_59d2908e0efe5679def4e7add2f148d5e62984753936177490aa47af71e
         </tbody>
     </table>
 
-    <a href=\"{{ path('program_new') }}\">Create new</a>
+    <a class=\"btn btn-primary\" href=\"{{ path('program_new') }}\">Create new</a>
 {% endblock %}
 ", "program/index.html.twig", "/home/te4g/PhpstormProjects/symfony_quest/wild-series/templates/program/index.html.twig");
     }
