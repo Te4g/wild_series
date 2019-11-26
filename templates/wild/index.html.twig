@@ -15,6 +15,15 @@
     <a href="{{ path('app_index') }}">
         Retour à l'accueil
     </a>
+
+
+    {{ form_start(form) }}
+
+    {{ form_row(form.name) }}
+
+    <button class="btn">{{ button_label|default('Save') }}</button>
+
+    {{ form_end(form) }}
 {% endblock %}
 
 
