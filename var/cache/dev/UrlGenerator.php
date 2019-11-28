@@ -15,6 +15,7 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
+    'actor_name' => [['name'], ['_controller' => 'App\\Controller\\ActorController::showByName'], [], [['variable', '/', '[^/]++', 'name', true], ['text', '/actor']], [], []],
     'category_add' => [[], ['_controller' => 'App\\Controller\\CategoryController::add'], [], [['text', '/category']], [], []],
     'app_index' => [[], ['_controller' => 'App\\Controller\\DefaultController::index'], [], [['text', '/']], [], []],
     'episode_index' => [[], ['_controller' => 'App\\Controller\\EpisodeController::index'], [], [['text', '/episode/']], [], []],

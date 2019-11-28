@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if actor.programs is defined %}
+        <p><strong>{{ name }} a joué dans les séries suivantes:</strong></p>
+    <ul>
+        {% for program in actor.programs %}
+            <li><a href="{{ path('program_show',{'id': program.id}) }}">{{program.title}}</a></li>
+        {% else %}
+            Aucune série enregistrée actuellement, il s'agit probablement d'un mauvais comédien.
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p><strong>{{ name }} ?? De qui tu parles gros ... </strong></p>
+    {% endif %}
+{% endblock %}
