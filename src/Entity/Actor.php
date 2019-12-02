@@ -62,6 +62,7 @@ class Actor
     {
         if (!$this->programs->contains($program)) {
             $this->programs[] = $program;
+            $program->addActor($this);
         }
 
         return $this;
