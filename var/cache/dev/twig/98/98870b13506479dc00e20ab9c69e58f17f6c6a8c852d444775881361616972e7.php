@@ -41,7 +41,7 @@ class __TwigTemplate_5bfe7f638cb57832c8f2fd8364488c746082d250b9189f0100c3063180e
 
         // line 1
         echo "<form method=\"post\" action=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episode_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["episode"]) || array_key_exists("episode", $context) ? $context["episode"] : (function () { throw new RuntimeError('Variable "episode" does not exist.', 1, $this->source); })()), "id", [], "any", false, false, false, 1)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episode_delete", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["episode"]) || array_key_exists("episode", $context) ? $context["episode"] : (function () { throw new RuntimeError('Variable "episode" does not exist.', 1, $this->source); })()), "slug", [], "any", false, false, false, 1)]), "html", null, true);
         echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
     <input type=\"hidden\" name=\"_token\" value=\"";
@@ -76,7 +76,7 @@ class __TwigTemplate_5bfe7f638cb57832c8f2fd8364488c746082d250b9189f0100c3063180e
 
     public function getSourceContext()
     {
-        return new Source("<form method=\"post\" action=\"{{ path('episode_delete', {'id': episode.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+        return new Source("<form method=\"post\" action=\"{{ path('episode_delete', {'slug': episode.slug}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
     <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ episode.id) }}\">
     <button class=\"btn\">Delete</button>

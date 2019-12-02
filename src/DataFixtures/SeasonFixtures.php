@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Season;
+use App\Service\Slugify;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -19,7 +20,10 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
             $season = new Season();
             $season->setYear($faker->year);
             $season->setDescription($faker->sentence);
+            $slugify = new Slugify();
+            $season->setSlug($slugify->generate($season->getYear()));
             $manager->persist($season);
+
 
             $this->addReference('season_' . $i, $season);
             $season->setProgram($this->getReference('program_' . random_int(0, 5)));

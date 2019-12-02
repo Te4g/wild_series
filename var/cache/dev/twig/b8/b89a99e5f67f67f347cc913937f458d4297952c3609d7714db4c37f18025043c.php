@@ -155,7 +155,7 @@ class __TwigTemplate_b8ccd2e7d05f0843ace4626cb42c44f78d08b2d66b6114abb7e6592ea64
 
     <a href=\"";
         // line 40
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("program_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["program"]) || array_key_exists("program", $context) ? $context["program"] : (function () { throw new RuntimeError('Variable "program" does not exist.', 40, $this->source); })()), "id", [], "any", false, false, false, 40)]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("program_edit", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["program"]) || array_key_exists("program", $context) ? $context["program"] : (function () { throw new RuntimeError('Variable "program" does not exist.', 40, $this->source); })()), "slug", [], "any", false, false, false, 40)]), "html", null, true);
         echo "\">edit</a>
 
     ";
@@ -227,7 +227,7 @@ class __TwigTemplate_b8ccd2e7d05f0843ace4626cb42c44f78d08b2d66b6114abb7e6592ea64
 
     <a href=\"{{ path('program_index') }}\">back to list</a>
 
-    <a href=\"{{ path('program_edit', {'id': program.id}) }}\">edit</a>
+    <a href=\"{{ path('program_edit', {'slug': program.slug}) }}\">edit</a>
 
     {{ include('program/_delete_form.html.twig') }}
 {% endblock %}

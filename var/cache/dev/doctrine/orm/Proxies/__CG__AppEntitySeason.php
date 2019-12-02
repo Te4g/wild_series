@@ -64,10 +64,10 @@ class Season extends \App\Entity\Season implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'year', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'program', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'episodes'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'year', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'program', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'episodes', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'slug'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'year', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'program', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'episodes'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'year', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'program', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'episodes', '' . "\0" . 'App\\Entity\\Season' . "\0" . 'slug'];
     }
 
     /**
@@ -285,6 +285,28 @@ class Season extends \App\Entity\Season implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeEpisode', [$episode]);
 
         return parent::removeEpisode($episode);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSlug(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSlug', []);
+
+        return parent::getSlug();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setSlug(string $slug): \App\Entity\Season
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSlug', [$slug]);
+
+        return parent::setSlug($slug);
     }
 
 }

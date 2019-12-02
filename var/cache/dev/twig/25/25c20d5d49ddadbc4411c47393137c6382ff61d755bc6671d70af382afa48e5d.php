@@ -125,11 +125,11 @@ class __TwigTemplate_782f82b93675508cfcaa2392b62223f19e95c543c4a619405b2290b6601
                 <td>
                     <a href=\"";
             // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episode_show", ["id" => twig_get_attribute($this->env, $this->source, $context["episode"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episode_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["episode"], "slug", [], "any", false, false, false, 26)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
             // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episode_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["episode"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episode_edit", ["slug" => twig_get_attribute($this->env, $this->source, $context["episode"], "slug", [], "any", false, false, false, 27)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -205,8 +205,8 @@ class __TwigTemplate_782f82b93675508cfcaa2392b62223f19e95c543c4a619405b2290b6601
                 <td>{{ episode.number }}</td>
                 <td>{{ episode.synopsis }}</td>
                 <td>
-                    <a href=\"{{ path('episode_show', {'id': episode.id}) }}\">show</a>
-                    <a href=\"{{ path('episode_edit', {'id': episode.id}) }}\">edit</a>
+                    <a href=\"{{ path('episode_show', {'slug': episode.slug}) }}\">show</a>
+                    <a href=\"{{ path('episode_edit', {'slug': episode.slug}) }}\">edit</a>
                 </td>
             </tr>
         {% else %}

@@ -120,11 +120,11 @@ class __TwigTemplate_908f1e2775754c96dfcd81192132114925c6de971ea8f8e99715c3cf8b3
                 <td>
                     <a href=\"";
             // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("season_show", ["id" => twig_get_attribute($this->env, $this->source, $context["season"], "id", [], "any", false, false, false, 24)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("season_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["season"], "slug", [], "any", false, false, false, 24)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
             // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("season_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["season"], "id", [], "any", false, false, false, 25)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("season_edit", ["slug" => twig_get_attribute($this->env, $this->source, $context["season"], "slug", [], "any", false, false, false, 25)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -198,8 +198,8 @@ class __TwigTemplate_908f1e2775754c96dfcd81192132114925c6de971ea8f8e99715c3cf8b3
                 <td>{{ season.year }}</td>
                 <td>{{ season.description }}</td>
                 <td>
-                    <a href=\"{{ path('season_show', {'id': season.id}) }}\">show</a>
-                    <a href=\"{{ path('season_edit', {'id': season.id}) }}\">edit</a>
+                    <a href=\"{{ path('season_show', {'slug': season.slug}) }}\">show</a>
+                    <a href=\"{{ path('season_edit', {'slug': season.slug}) }}\">edit</a>
                 </td>
             </tr>
         {% else %}

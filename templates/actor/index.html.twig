@@ -1,16 +1,36 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Actor index{% endblock %}
+
 {% block body %}
-    {% if actor.programs is defined %}
-        <p><strong>{{ name }} a joué dans les séries suivantes:</strong></p>
-    <ul>
-        {% for program in actor.programs %}
-            <li><a href="{{ path('program_show',{'id': program.id}) }}">{{program.title}}</a></li>
+    <h1>Actor index</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Slug</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actor in actors %}
+            <tr>
+                <td>{{ actor.id }}</td>
+                <td>{{ actor.name }}</td>
+                <td>{{ actor.slug }}</td>
+                <td>
+                    <a href="{{ path('actor_show', {'slug': actor.slug}) }}">show</a>
+                    <a href="{{ path('actor_edit', {'slug': actor.slug}) }}">edit</a>
+                </td>
+            </tr>
         {% else %}
-            Aucune série enregistrée actuellement, il s'agit probablement d'un mauvais comédien.
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
         {% endfor %}
-    </ul>
-    {% else %}
-    <p><strong>{{ name }} ?? De qui tu parles gros ... </strong></p>
-    {% endif %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('actor_new') }}">Create new</a>
 {% endblock %}

@@ -76,6 +76,10 @@ class __TwigTemplate_c7828424ac28b2a810ef6f4bb7dd7f560a50702c2fdfc70160549e39fb9
         // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episode_index");
         echo "\">Liste des épisodes</a>
+        <a class =\"btn btn-secondary\" href=\"";
+        // line 9
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("actor_index");
+        echo "\">Liste des actors</a>
         </div>
     </nav>
 </header>
@@ -95,7 +99,7 @@ class __TwigTemplate_c7828424ac28b2a810ef6f4bb7dd7f560a50702c2fdfc70160549e39fb9
 
     public function getDebugInfo()
     {
-        return array (  77 => 8,  73 => 7,  69 => 6,  63 => 2,  44 => 1,);
+        return array (  81 => 9,  77 => 8,  73 => 7,  69 => 6,  63 => 2,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -108,6 +112,7 @@ class __TwigTemplate_c7828424ac28b2a810ef6f4bb7dd7f560a50702c2fdfc70160549e39fb9
         <a class =\"btn btn-secondary\" href=\"{{ path('program_index') }}\">Liste des séries</a>
         <a class =\"btn btn-secondary\" href=\"{{ path('season_index') }}\">Liste des saisons</a>
         <a class =\"btn btn-secondary\" href=\"{{ path('episode_index') }}\">Liste des épisodes</a>
+        <a class =\"btn btn-secondary\" href=\"{{ path('actor_index') }}\">Liste des actors</a>
         </div>
     </nav>
 </header>

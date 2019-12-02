@@ -7,6 +7,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Faker;
+use App\Service\Slugify;
 
 class ActorFixtures extends Fixture implements DependentFixtureInterface
 {
@@ -22,6 +23,8 @@ class ActorFixtures extends Fixture implements DependentFixtureInterface
         foreach (self::ACTORS as $key => $actorName) {
             $actor = new Actor();
             $actor->setName($actorName);
+            $slugify = new Slugify();
+            $actor->setSlug($slugify->generate($actor->getName()));
             $manager->persist($actor);
             $this->addReference('actor_' . $key, $actor);
             $actor->addProgram($this->getReference('program_' . random_int(0,5)));
@@ -33,6 +36,8 @@ class ActorFixtures extends Fixture implements DependentFixtureInterface
 
             $actor = new Actor();
             $actor->setName($faker->name);
+            $slugify = new Slugify();
+            $actor->setSlug($slugify->generate($actor->getName()));
             $manager->persist($actor);
 
             $this->addReference('actor_' . $i, $actor);
