@@ -1,2 +1,2 @@
 # wild_series
-https://www.loom.com/share/b5c268ca4a954adfb695ac8288a81b84
+https://www.loom.com/share/3bbd809bf37e49ce9470a40d8fa8f265
