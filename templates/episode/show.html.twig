@@ -7,24 +7,51 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ episode.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ episode.title }}</td>
-            </tr>
-            <tr>
-                <th>Number</th>
-                <td>{{ episode.number }}</td>
-            </tr>
-            <tr>
-                <th>Synopsis</th>
-                <td>{{ episode.synopsis }}</td>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ episode.id }}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>{{ episode.title }}</td>
+        </tr>
+        <tr>
+            <th>Number</th>
+            <td>{{ episode.number }}</td>
+        </tr>
+        <tr>
+            <th>Synopsis</th>
+            <td>{{ episode.synopsis }}</td>
+        </tr>
         </tbody>
     </table>
+
+    <br>
+    <p><strong>Liste des commentaires:</strong></p>
+
+    {% if comments is defined %}
+        {% for comment in comments | reverse %}
+            <div class="container-fluid">
+                <p>{{ comment.user.email }} a laissé le commentaire suivant :</p>
+                <p>- Message: {{ comment.comment }}</p>
+                <p>- Note: {{ comment.rate }}</p>
+            </div>
+        {% endfor %}
+    {#{% endif %}#}
+    {% else %}
+        <p>Aucun commentaire enregistré</p>
+        <br>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="container-fluid border border-secondary">
+            <p><u><strong>Ajoutez un commentaire :</strong></u></p>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-secondary mb-1">{{ button_label|default('Envoyer') }}</button>
+            {{ form_end(form) }}
+        </div>
+    {% endif %}
 
     <a href="{{ path('episode_index') }}">back to list</a>
 

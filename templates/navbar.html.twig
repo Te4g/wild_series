@@ -7,6 +7,13 @@
         <a class ="btn btn-secondary" href="{{ path('season_index') }}">Liste des saisons</a>
         <a class ="btn btn-secondary" href="{{ path('episode_index') }}">Liste des épisodes</a>
         <a class ="btn btn-secondary" href="{{ path('actor_index') }}">Liste des actors</a>
+            {% if app.user %}
+                {{ app.user.email }}
+                <a href="{{ path('app_logout') }}"> Se déconnecter</a>
+            {% else %}
+                <a href="{{ path('app_login') }}"> Se connecter</a>
+            {% endif %}
+
         </div>
     </nav>
 </header>
