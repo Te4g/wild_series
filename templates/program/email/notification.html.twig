@@ -1,0 +1,12 @@
+{% extends 'base_email.html.twig' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+
+{% block description %}
+
+    <a href="http://localhost:8000/program/{{ slug }}" ><img src="{{ image }}" alt="{{ title }}"></a>
+
+{% endblock %}
