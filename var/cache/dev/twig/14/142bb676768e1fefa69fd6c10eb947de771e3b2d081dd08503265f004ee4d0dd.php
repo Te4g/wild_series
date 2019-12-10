@@ -80,26 +80,30 @@ class __TwigTemplate_c7828424ac28b2a810ef6f4bb7dd7f560a50702c2fdfc70160549e39fb9
         // line 9
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("actor_index");
         echo "\">Liste des actors</a>
-            ";
+        <a class =\"btn btn-secondary\" href=\"";
         // line 10
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10)) {
-            // line 11
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("comment_index");
+        echo "\">Liste des commentaires</a>
+            ";
+        // line 11
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11)) {
+            // line 12
             echo "                ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11), "email", [], "any", false, false, false, 11), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "email", [], "any", false, false, false, 12), "html", null, true);
             echo "
                 <a href=\"";
-            // line 12
+            // line 13
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\"> Se déconnecter</a>
             ";
         } else {
-            // line 14
+            // line 15
             echo "                <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\"> Se connecter</a>
             ";
         }
-        // line 16
+        // line 17
         echo "
         </div>
     </nav>
@@ -120,7 +124,7 @@ class __TwigTemplate_c7828424ac28b2a810ef6f4bb7dd7f560a50702c2fdfc70160549e39fb9
 
     public function getDebugInfo()
     {
-        return array (  103 => 16,  97 => 14,  92 => 12,  87 => 11,  85 => 10,  81 => 9,  77 => 8,  73 => 7,  69 => 6,  63 => 2,  44 => 1,);
+        return array (  107 => 17,  101 => 15,  96 => 13,  91 => 12,  89 => 11,  85 => 10,  81 => 9,  77 => 8,  73 => 7,  69 => 6,  63 => 2,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -134,6 +138,7 @@ class __TwigTemplate_c7828424ac28b2a810ef6f4bb7dd7f560a50702c2fdfc70160549e39fb9
         <a class =\"btn btn-secondary\" href=\"{{ path('season_index') }}\">Liste des saisons</a>
         <a class =\"btn btn-secondary\" href=\"{{ path('episode_index') }}\">Liste des épisodes</a>
         <a class =\"btn btn-secondary\" href=\"{{ path('actor_index') }}\">Liste des actors</a>
+        <a class =\"btn btn-secondary\" href=\"{{ path('comment_index') }}\">Liste des commentaires</a>
             {% if app.user %}
                 {{ app.user.email }}
                 <a href=\"{{ path('app_logout') }}\"> Se déconnecter</a>

@@ -132,76 +132,93 @@ class __TwigTemplate_b12b5cf15fcfb034324cf3aab2380da854d55cdb485fbd7b5455de3530c
             $context['_seq'] = twig_ensure_traversable(twig_reverse_filter($this->env, (isset($context["comments"]) || array_key_exists("comments", $context) ? $context["comments"] : (function () { throw new RuntimeError('Variable "comments" does not exist.', 33, $this->source); })())));
             foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
                 // line 34
-                echo "            <div class=\"container-fluid\">
+                echo "            <div class=\"container-fluid d-flex flex-column\">
+                <div class = d-flex>
                 <p>";
-                // line 35
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "user", [], "any", false, false, false, 35), "email", [], "any", false, false, false, 35), "html", null, true);
-                echo " a laissé le commentaire suivant :</p>
-                <p>- Message: ";
                 // line 36
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "comment", [], "any", false, false, false, 36), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["comment"], "user", [], "any", false, false, false, 36), "email", [], "any", false, false, false, 36), "html", null, true);
+                echo " a laissé le commentaire suivant :</p>
+                <form method=\"post\" action=\"";
+                // line 37
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("comment_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 37)]), "html", null, true);
+                echo "\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+                    <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
+                    <input type=\"hidden\" name=\"_token\" value=\"";
+                // line 39
+                echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["comment"], "id", [], "any", false, false, false, 39))), "html", null, true);
+                echo "\">
+                    <button class=\"btn btn-secondary\">X</button>
+                </form>
+                </div>
+
+                <p>- Message: ";
+                // line 44
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "comment", [], "any", false, false, false, 44), "html", null, true);
                 echo "</p>
                 <p>- Note: ";
-                // line 37
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "rate", [], "any", false, false, false, 37), "html", null, true);
+                // line 45
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "rate", [], "any", false, false, false, 45), "html", null, true);
                 echo "</p>
+
+
+
             </div>
         ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 40
+            // line 51
             echo "    ";
-            // line 41
+            // line 52
             echo "    ";
         } else {
-            // line 42
+            // line 53
             echo "        <p>Aucun commentaire enregistré</p>
         <br>
     ";
         }
-        // line 45
+        // line 56
         echo "
     ";
-        // line 46
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 46, $this->source); })()), "user", [], "any", false, false, false, 46)) {
-            // line 47
+        // line 57
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 57, $this->source); })()), "user", [], "any", false, false, false, 57)) {
+            // line 58
             echo "        <div class=\"container-fluid border border-secondary\">
             <p><u><strong>Ajoutez un commentaire :</strong></u></p>
             ";
-            // line 49
-            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 49, $this->source); })()), 'form_start');
+            // line 60
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 60, $this->source); })()), 'form_start');
             echo "
             ";
-            // line 50
-            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 50, $this->source); })()), 'widget');
+            // line 61
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 61, $this->source); })()), 'widget');
             echo "
             <button class=\"btn btn-secondary mb-1\">";
-            // line 51
-            echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 51, $this->source); })()), "Envoyer")) : ("Envoyer")), "html", null, true);
+            // line 62
+            echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 62, $this->source); })()), "Envoyer")) : ("Envoyer")), "html", null, true);
             echo "</button>
             ";
-            // line 52
-            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 52, $this->source); })()), 'form_end');
+            // line 63
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 63, $this->source); })()), 'form_end');
             echo "
         </div>
     ";
         }
-        // line 55
+        // line 66
         echo "
     <a href=\"";
-        // line 56
+        // line 67
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episode_index");
         echo "\">back to list</a>
 
     <a href=\"";
-        // line 58
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episode_edit", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["episode"]) || array_key_exists("episode", $context) ? $context["episode"] : (function () { throw new RuntimeError('Variable "episode" does not exist.', 58, $this->source); })()), "slug", [], "any", false, false, false, 58)]), "html", null, true);
+        // line 69
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episode_edit", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["episode"]) || array_key_exists("episode", $context) ? $context["episode"] : (function () { throw new RuntimeError('Variable "episode" does not exist.', 69, $this->source); })()), "slug", [], "any", false, false, false, 69)]), "html", null, true);
         echo "\">edit</a>
 
     ";
-        // line 60
+        // line 71
         echo twig_include($this->env, $context, "episode/_delete_form.html.twig");
         echo "
 ";
@@ -225,7 +242,7 @@ class __TwigTemplate_b12b5cf15fcfb034324cf3aab2380da854d55cdb485fbd7b5455de3530c
 
     public function getDebugInfo()
     {
-        return array (  205 => 60,  200 => 58,  195 => 56,  192 => 55,  186 => 52,  182 => 51,  178 => 50,  174 => 49,  170 => 47,  168 => 46,  165 => 45,  160 => 42,  157 => 41,  155 => 40,  146 => 37,  142 => 36,  138 => 35,  135 => 34,  130 => 33,  128 => 32,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  222 => 71,  217 => 69,  212 => 67,  209 => 66,  203 => 63,  199 => 62,  195 => 61,  191 => 60,  187 => 58,  185 => 57,  182 => 56,  177 => 53,  174 => 52,  172 => 51,  160 => 45,  156 => 44,  148 => 39,  143 => 37,  139 => 36,  135 => 34,  130 => 33,  128 => 32,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -263,10 +280,21 @@ class __TwigTemplate_b12b5cf15fcfb034324cf3aab2380da854d55cdb485fbd7b5455de3530c
 
     {% if comments is defined %}
         {% for comment in comments | reverse %}
-            <div class=\"container-fluid\">
+            <div class=\"container-fluid d-flex flex-column\">
+                <div class = d-flex>
                 <p>{{ comment.user.email }} a laissé le commentaire suivant :</p>
+                <form method=\"post\" action=\"{{ path('comment_delete', {'id': comment.id}) }}\" onsubmit=\"return confirm('Are you sure you want to delete this item?');\">
+                    <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
+                    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ comment.id) }}\">
+                    <button class=\"btn btn-secondary\">X</button>
+                </form>
+                </div>
+
                 <p>- Message: {{ comment.comment }}</p>
                 <p>- Note: {{ comment.rate }}</p>
+
+
+
             </div>
         {% endfor %}
     {#{% endif %}#}

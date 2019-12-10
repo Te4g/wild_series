@@ -31,10 +31,21 @@
 
     {% if comments is defined %}
         {% for comment in comments | reverse %}
-            <div class="container-fluid">
+            <div class="container-fluid d-flex flex-column">
+                <div class = d-flex>
                 <p>{{ comment.user.email }} a laissé le commentaire suivant :</p>
+                <form method="post" action="{{ path('comment_delete', {'id': comment.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ comment.id) }}">
+                    <button class="btn btn-secondary">X</button>
+                </form>
+                </div>
+
                 <p>- Message: {{ comment.comment }}</p>
                 <p>- Note: {{ comment.rate }}</p>
+
+
+
             </div>
         {% endfor %}
     {#{% endif %}#}
