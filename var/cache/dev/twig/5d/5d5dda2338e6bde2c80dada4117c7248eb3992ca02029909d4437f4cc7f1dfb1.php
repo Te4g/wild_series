@@ -132,6 +132,10 @@ class __TwigTemplate_031a385034b3e2d6243383056b13cc411bca9f320eee74d92c80f80eb09
     ";
         // line 37
         echo "
+    <a href=\"";
+        // line 38
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\"><strong>Register</strong></a><br>
     <button class=\"btn btn-lg btn-primary\" type=\"submit\">
         Sign in
     </button>
@@ -157,7 +161,7 @@ class __TwigTemplate_031a385034b3e2d6243383056b13cc411bca9f320eee74d92c80f80eb09
 
     public function getDebugInfo()
     {
-        return array (  134 => 37,  128 => 24,  120 => 19,  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  137 => 38,  134 => 37,  128 => 24,  120 => 19,  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -199,6 +203,7 @@ class __TwigTemplate_031a385034b3e2d6243383056b13cc411bca9f320eee74d92c80f80eb09
         </div>
     #}
 
+    <a href=\"{{ path('app_register') }}\"><strong>Register</strong></a><br>
     <button class=\"btn btn-lg btn-primary\" type=\"submit\">
         Sign in
     </button>

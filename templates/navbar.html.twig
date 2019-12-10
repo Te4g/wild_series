@@ -10,9 +10,10 @@
         <a class ="btn btn-secondary" href="{{ path('comment_index') }}">Liste des commentaires</a>
             {% if app.user %}
                 {{ app.user.email }}
-                <a href="{{ path('app_logout') }}"> Se déconnecter</a>
+                <a class="btn btn-primary" href="{{ path('app_logout') }}">Se déconnecter</a>
+                <a class="btn btn-info" href="{{ path('app_profile') }}">Mon compte</a>
             {% else %}
-                <a href="{{ path('app_login') }}"> Se connecter</a>
+                <a class="btn btn-primary" href="{{ path('app_login') }}">Se connecter</a>
             {% endif %}
 
         </div>

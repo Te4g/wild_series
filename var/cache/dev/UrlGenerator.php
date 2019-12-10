@@ -44,6 +44,8 @@ return [
     'season_delete' => [['slug'], ['_controller' => 'App\\Controller\\SeasonController::delete'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/season']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
+    'app_register' => [[], ['_controller' => 'App\\Controller\\SecurityController::register'], [], [['text', '/register']], [], []],
+    'app_profile' => [[], ['_controller' => 'App\\Controller\\SecurityController::profile'], [], [['text', '/my-profile']], [], []],
     'wild_index' => [[], ['_controller' => 'App\\Controller\\WildController::index'], [], [['text', '/wild']], [], []],
     'wild_show' => [['slug'], ['slug' => null, '_controller' => 'App\\Controller\\WildController::show'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/wild/show']], [], []],
     'wild_category' => [['categoryName'], ['_controller' => 'App\\Controller\\WildController::showByCategory'], [], [['variable', '/', '[^/]++', 'categoryName', true], ['text', '/wild/category']], [], []],

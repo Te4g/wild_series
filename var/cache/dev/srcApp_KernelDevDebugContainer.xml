@@ -490,6 +490,9 @@
     <service id="App\Form\ProgramType" class="App\Form\ProgramType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\SeasonType" class="App\Form\SeasonType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -871,6 +874,7 @@
         <argument>App\Form\EpisodeType</argument>
         <argument>App\Form\ProgramSearchType</argument>
         <argument>App\Form\ProgramType</argument>
+        <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\SeasonType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -1139,7 +1143,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.6JPRsoR"/>
+      <argument type="service" id=".service_locator.2KW8kvC"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3461,6 +3465,13 @@
       <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="cache.security_expression_language.recorder_inner"/>
     </service>
+    <service id="security.cache_warmer.expression" class="Symfony\Bundle\SecurityBundle\CacheWarmer\ExpressionCacheWarmer" public="false">
+      <tag name="kernel.cache_warmer"/>
+      <argument type="iterator">
+        <argument type="service" id=".security.expression.cKdL19O"/>
+      </argument>
+      <argument type="service" id="security.expression_language"/>
+    </service>
     <service id="security.authentication.listener.anonymous" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.token_storage"/>
@@ -3487,6 +3498,20 @@
         <argument type="service" id=".security.request_matcher.6oDFm7B"/>
         <argument type="collection">
           <argument>ROLE_SUBSCRIBER</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.O7Tsk.w"/>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.eKXDm4f"/>
+        <argument type="collection">
+          <argument type="service" id=".security.expression.cKdL19O"/>
         </argument>
         <argument>null</argument>
       </call>
@@ -3925,6 +3950,15 @@
     </service>
     <service id=".security.request_matcher.6oDFm7B" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/program</argument>
+    </service>
+    <service id=".security.request_matcher.O7Tsk.w" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/register</argument>
+    </service>
+    <service id=".security.request_matcher.eKXDm4f" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/login$</argument>
+    </service>
+    <service id=".security.expression.cKdL19O" class="Symfony\Component\ExpressionLanguage\Expression" public="false">
+      <argument>!is_granted('ROLE_USER')</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
@@ -4741,6 +4775,8 @@
     <service id=".abstract.instanceof.App\Form\ProgramSearchType" class="App\Form\ProgramSearchType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProgramType" class="App\Form\ProgramType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ProgramType" class="App\Form\ProgramType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SeasonType" class="App\Form\SeasonType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\SeasonType" class="App\Form\SeasonType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ActorRepository" class="App\Repository\ActorRepository" autowire="true" abstract="true"/>
@@ -5020,7 +5056,15 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.cnXE6RY" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.wyrb61." class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="authenticator" type="service" id="App\Security\LoginFormAuthenticator"/>
+        <argument key="guardHandler" type="service" id="security.authentication.guard_handler"/>
+        <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
+      </argument>
+    </service>
+    <service id=".service_locator.qgO3N0q" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ActorController::delete" type="service" id=".service_locator.K0SvH3w"/>
@@ -5046,6 +5090,7 @@
         <argument key="App\Controller\SeasonController::index" type="service" id=".service_locator.RILWcPl"/>
         <argument key="App\Controller\SeasonController::show" type="service" id=".service_locator.ADeF0mv"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.EbLunuf"/>
+        <argument key="App\Controller\SecurityController::register" type="service" id=".service_locator.wyrb61."/>
         <argument key="App\Controller\WildController::showEpisode" type="service" id=".service_locator.PqXbmwR"/>
         <argument key="App\Controller\ActorController:delete" type="service" id=".service_locator.K0SvH3w"/>
         <argument key="App\Controller\ActorController:edit" type="service" id=".service_locator.piwk0mf"/>
@@ -5070,6 +5115,7 @@
         <argument key="App\Controller\SeasonController:index" type="service" id=".service_locator.RILWcPl"/>
         <argument key="App\Controller\SeasonController:show" type="service" id=".service_locator.ADeF0mv"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.EbLunuf"/>
+        <argument key="App\Controller\SecurityController:register" type="service" id=".service_locator.wyrb61."/>
         <argument key="App\Controller\WildController:showEpisode" type="service" id=".service_locator.PqXbmwR"/>
       </argument>
     </service>
@@ -5132,7 +5178,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.6JPRsoR" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.2KW8kvC" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ActorType" type="service" id="App\Form\ActorType"/>
@@ -5142,6 +5188,7 @@
         <argument key="App\Form\EpisodeType" type="service" id="App\Form\EpisodeType"/>
         <argument key="App\Form\ProgramSearchType" type="service" id="App\Form\ProgramSearchType"/>
         <argument key="App\Form\ProgramType" type="service" id="App\Form\ProgramType"/>
+        <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\SeasonType" type="service" id="App\Form\SeasonType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
@@ -5516,12 +5563,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.cnXE6RY"/>
+      <argument type="service" id=".service_locator.qgO3N0q"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.cnXE6RY"/>
+      <argument type="service" id=".service_locator.qgO3N0q"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5900,7 +5947,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" alias="webpack_encore.entrypoint_lookup_collection" public="false"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.cnXE6RY"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.qgO3N0q"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

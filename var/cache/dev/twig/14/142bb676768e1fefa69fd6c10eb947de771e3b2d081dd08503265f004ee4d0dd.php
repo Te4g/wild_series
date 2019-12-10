@@ -91,19 +91,23 @@ class __TwigTemplate_c7828424ac28b2a810ef6f4bb7dd7f560a50702c2fdfc70160549e39fb9
             echo "                ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "email", [], "any", false, false, false, 12), "html", null, true);
             echo "
-                <a href=\"";
+                <a class=\"btn btn-primary\" href=\"";
             // line 13
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\"> Se déconnecter</a>
+            echo "\">Se déconnecter</a>
+                <a class=\"btn btn-info\" href=\"";
+            // line 14
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_profile");
+            echo "\">Mon compte</a>
             ";
         } else {
-            // line 15
-            echo "                <a href=\"";
+            // line 16
+            echo "                <a class=\"btn btn-primary\" href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-            echo "\"> Se connecter</a>
+            echo "\">Se connecter</a>
             ";
         }
-        // line 17
+        // line 18
         echo "
         </div>
     </nav>
@@ -124,7 +128,7 @@ class __TwigTemplate_c7828424ac28b2a810ef6f4bb7dd7f560a50702c2fdfc70160549e39fb9
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  101 => 15,  96 => 13,  91 => 12,  89 => 11,  85 => 10,  81 => 9,  77 => 8,  73 => 7,  69 => 6,  63 => 2,  44 => 1,);
+        return array (  111 => 18,  105 => 16,  100 => 14,  96 => 13,  91 => 12,  89 => 11,  85 => 10,  81 => 9,  77 => 8,  73 => 7,  69 => 6,  63 => 2,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -141,9 +145,10 @@ class __TwigTemplate_c7828424ac28b2a810ef6f4bb7dd7f560a50702c2fdfc70160549e39fb9
         <a class =\"btn btn-secondary\" href=\"{{ path('comment_index') }}\">Liste des commentaires</a>
             {% if app.user %}
                 {{ app.user.email }}
-                <a href=\"{{ path('app_logout') }}\"> Se déconnecter</a>
+                <a class=\"btn btn-primary\" href=\"{{ path('app_logout') }}\">Se déconnecter</a>
+                <a class=\"btn btn-info\" href=\"{{ path('app_profile') }}\">Mon compte</a>
             {% else %}
-                <a href=\"{{ path('app_login') }}\"> Se connecter</a>
+                <a class=\"btn btn-primary\" href=\"{{ path('app_login') }}\">Se connecter</a>
             {% endif %}
 
         </div>
