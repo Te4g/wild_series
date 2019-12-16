@@ -6,6 +6,7 @@ use App\Entity\Category;
 use App\Service\Slugify;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use Faker;
 
 
 class CategoryFixtures extends Fixture
@@ -20,11 +21,13 @@ class CategoryFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        foreach (self::CATEGORIES as $key => $categoryName) {
+        $faker = \Faker\Factory::create('fr_FR');
+
+        for ($i = 1; $i <= 1000; $i++) {
             $category = new Category();
-            $category->setName($categoryName);
+            $category->setName($faker->word);
             $manager->persist($category);
-            $this->addReference('categorie_' . $key, $category);
+            $this->addReference('categorie_' . $i, $category);
         }
         $manager->flush();
 

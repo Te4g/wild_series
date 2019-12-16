@@ -88,47 +88,67 @@ class __TwigTemplate_6d2438598da31d485b51a1e75cf41e379e043a64d7bf367972c70761a66
         echo "    <h1>Program index</h1>
     <table class=\"table\">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Summary</th>
-                <th>Poster</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Summary</th>
+            <th>Actors</th>
+            <th>Poster</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         ";
-        // line 18
+        // line 19
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["programs"]) || array_key_exists("programs", $context) ? $context["programs"] : (function () { throw new RuntimeError('Variable "programs" does not exist.', 18, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["programs"]) || array_key_exists("programs", $context) ? $context["programs"] : (function () { throw new RuntimeError('Variable "programs" does not exist.', 19, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["program"]) {
-            // line 19
+            // line 20
             echo "            <tr>
                 <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "id", [], "any", false, false, false, 20), "html", null, true);
-            echo "</td>
-                <td>";
             // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "title", [], "any", false, false, false, 21), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "id", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
                 <td>";
             // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "summary", [], "any", false, false, false, 22), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "title", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
-                <td><img class=\"w-100\" src=\"";
+                <td>";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "poster", [], "any", false, false, false, 23), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "summary", [], "any", false, false, false, 23), "html", null, true);
+            echo "</td>
+                <td>
+                    <ul>
+                        ";
+            // line 26
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["program"], "actors", [], "any", false, false, false, 26));
+            foreach ($context['_seq'] as $context["_key"] => $context["actors"]) {
+                // line 27
+                echo "                            <li>";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["actors"], "name", [], "any", false, false, false, 27), "html", null, true);
+                echo "</li>
+                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['actors'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 29
+            echo "                    </ul>
+                </td>
+                <td><img class=\"w-100\" src=\"";
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "poster", [], "any", false, false, false, 31), "html", null, true);
             echo "\"></td>
                 <td>
                     <a href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("program_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["program"], "slug", [], "any", false, false, false, 25)]), "html", null, true);
+            // line 33
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("program_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["program"], "slug", [], "any", false, false, false, 33)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("program_edit", ["slug" => twig_get_attribute($this->env, $this->source, $context["program"], "slug", [], "any", false, false, false, 26)]), "html", null, true);
+            // line 34
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("program_edit", ["slug" => twig_get_attribute($this->env, $this->source, $context["program"], "slug", [], "any", false, false, false, 34)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -136,7 +156,7 @@ class __TwigTemplate_6d2438598da31d485b51a1e75cf41e379e043a64d7bf367972c70761a66
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 30
+            // line 38
             echo "            <tr>
                 <td colspan=\"5\">no records found</td>
             </tr>
@@ -145,12 +165,12 @@ class __TwigTemplate_6d2438598da31d485b51a1e75cf41e379e043a64d7bf367972c70761a66
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['program'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 42
         echo "        </tbody>
     </table>
 
     <a class=\"btn btn-primary\" href=\"";
-        // line 37
+        // line 45
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("program_new");
         echo "\">Create new</a>
 ";
@@ -174,7 +194,7 @@ class __TwigTemplate_6d2438598da31d485b51a1e75cf41e379e043a64d7bf367972c70761a66
 
     public function getDebugInfo()
     {
-        return array (  154 => 37,  149 => 34,  140 => 30,  131 => 26,  127 => 25,  122 => 23,  118 => 22,  114 => 21,  110 => 20,  107 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  174 => 45,  169 => 42,  160 => 38,  151 => 34,  147 => 33,  142 => 31,  138 => 29,  129 => 27,  125 => 26,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -187,13 +207,14 @@ class __TwigTemplate_6d2438598da31d485b51a1e75cf41e379e043a64d7bf367972c70761a66
     <h1>Program index</h1>
     <table class=\"table\">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Summary</th>
-                <th>Poster</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Summary</th>
+            <th>Actors</th>
+            <th>Poster</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for program in programs %}
@@ -201,6 +222,13 @@ class __TwigTemplate_6d2438598da31d485b51a1e75cf41e379e043a64d7bf367972c70761a66
                 <td>{{ program.id }}</td>
                 <td>{{ program.title }}</td>
                 <td>{{ program.summary }}</td>
+                <td>
+                    <ul>
+                        {% for actors in program.actors %}
+                            <li>{{ actors.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
                 <td><img class=\"w-100\" src=\"{{ program.poster }}\"></td>
                 <td>
                     <a href=\"{{ path('program_show', {'slug': program.slug}) }}\">show</a>

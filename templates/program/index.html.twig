@@ -6,13 +6,14 @@
     <h1>Program index</h1>
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Summary</th>
-                <th>Poster</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Summary</th>
+            <th>Actors</th>
+            <th>Poster</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for program in programs %}
@@ -20,6 +21,13 @@
                 <td>{{ program.id }}</td>
                 <td>{{ program.title }}</td>
                 <td>{{ program.summary }}</td>
+                <td>
+                    <ul>
+                        {% for actors in program.actors %}
+                            <li>{{ actors.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
                 <td><img class="w-100" src="{{ program.poster }}"></td>
                 <td>
                     <a href="{{ path('program_show', {'slug': program.slug}) }}">show</a>
