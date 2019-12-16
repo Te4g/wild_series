@@ -150,7 +150,7 @@ class __TwigTemplate_9dc010e67ded1b1c6dbfb16b4bce38a5839bd64ae2c8c30c4ca3fd01b2f
         echo "        </tbody>
     </table>
 
-    <a href=\"";
+    <a class=\"btn btn-primary\" href=\"";
         // line 38
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episode_new");
         echo "\">Create new</a>
@@ -217,7 +217,7 @@ class __TwigTemplate_9dc010e67ded1b1c6dbfb16b4bce38a5839bd64ae2c8c30c4ca3fd01b2f
         </tbody>
     </table>
 
-    <a href=\"{{ path('episode_new') }}\">Create new</a>
+    <a class=\"btn btn-primary\" href=\"{{ path('episode_new') }}\">Create new</a>
 {% endblock %}
 ", "episode/index.html.twig", "/home/te4g/PhpstormProjects/symfony_quest/wild-series/templates/episode/index.html.twig");
     }

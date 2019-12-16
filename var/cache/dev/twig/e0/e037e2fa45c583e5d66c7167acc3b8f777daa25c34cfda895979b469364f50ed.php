@@ -63,7 +63,20 @@ class __TwigTemplate_74bedfc73d057abd06e9aadd3f34e7dd8eb6d6eeed1c0086ddcb087e32e
         echo "<header>
     <nav class=\"navbar navbar-light bg-light\">
         <a class=\"navbar-brand btn btn-primary\" href=\"/\">Accueil</a>
-        <a class =\"btn btn-secondary\" href=\"/wild\">Liste des séries</a>
+        <div>
+        <a class =\"btn btn-secondary\" href=\"";
+        // line 6
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("program_index");
+        echo "\">Liste des séries</a>
+        <a class =\"btn btn-secondary\" href=\"";
+        // line 7
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("season_index");
+        echo "\">Liste des saisons</a>
+        <a class =\"btn btn-secondary\" href=\"";
+        // line 8
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episode_index");
+        echo "\">Liste des épisodes</a>
+        </div>
     </nav>
 </header>
 ";
@@ -82,7 +95,7 @@ class __TwigTemplate_74bedfc73d057abd06e9aadd3f34e7dd8eb6d6eeed1c0086ddcb087e32e
 
     public function getDebugInfo()
     {
-        return array (  63 => 2,  44 => 1,);
+        return array (  77 => 8,  73 => 7,  69 => 6,  63 => 2,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -91,7 +104,11 @@ class __TwigTemplate_74bedfc73d057abd06e9aadd3f34e7dd8eb6d6eeed1c0086ddcb087e32e
 <header>
     <nav class=\"navbar navbar-light bg-light\">
         <a class=\"navbar-brand btn btn-primary\" href=\"/\">Accueil</a>
-        <a class =\"btn btn-secondary\" href=\"/wild\">Liste des séries</a>
+        <div>
+        <a class =\"btn btn-secondary\" href=\"{{ path('program_index') }}\">Liste des séries</a>
+        <a class =\"btn btn-secondary\" href=\"{{ path('season_index') }}\">Liste des saisons</a>
+        <a class =\"btn btn-secondary\" href=\"{{ path('episode_index') }}\">Liste des épisodes</a>
+        </div>
     </nav>
 </header>
 {%  endblock %}", "navbar.html.twig", "/home/te4g/PhpstormProjects/symfony_quest/wild-series/templates/navbar.html.twig");

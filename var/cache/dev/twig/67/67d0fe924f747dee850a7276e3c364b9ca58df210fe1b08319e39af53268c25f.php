@@ -111,7 +111,7 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
             // line 9
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 9), "html", null, true);
             echo " / <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_show", ["slug" => twig_get_attribute($this->env, $this->source, $context["program"], "title", [], "any", false, false, false, 9)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_show", ["slug" => twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["program"], "title", [], "any", false, false, false, 9), [" " => "_"])]), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["program"], "title", [], "any", false, false, false, 9), "html", null, true);
             echo "</a> - Catégorie : ";
@@ -202,7 +202,7 @@ class __TwigTemplate_b0df698ae8d322173a09e848b39b54fe452d6f07cbf0ca4624b859f16c7
     <h1>Toutes les séries de la table program : </h1>
     {% for program in programs %}
         <div>
-            <h2>{{ loop.index }} / <a href=\"{{ path('wild_show', {'slug': program.title }) }}\">{{ program.title }}</a> - Catégorie : {{ program.category.name }}</h2>
+            <h2>{{ loop.index }} / <a href=\"{{ path('wild_show', {'slug': program.title|replace({\" \":\"_\"})}) }}\">{{ program.title }}</a> - Catégorie : {{ program.category.name }}</h2>
             <p>{{ program.summary }}</p>
         </div>
     {% else %}
