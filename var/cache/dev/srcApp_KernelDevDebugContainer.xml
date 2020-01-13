@@ -5064,7 +5064,7 @@
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
-    <service id=".service_locator.qgO3N0q" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.GJmUZjJ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ActorController::delete" type="service" id=".service_locator.K0SvH3w"/>
@@ -5088,6 +5088,7 @@
         <argument key="App\Controller\SeasonController::delete" type="service" id=".service_locator.ADeF0mv"/>
         <argument key="App\Controller\SeasonController::edit" type="service" id=".service_locator.ADeF0mv"/>
         <argument key="App\Controller\SeasonController::index" type="service" id=".service_locator.RILWcPl"/>
+        <argument key="App\Controller\SeasonController::new" type="service" id=".service_locator.cypIcSv"/>
         <argument key="App\Controller\SeasonController::show" type="service" id=".service_locator.ADeF0mv"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.EbLunuf"/>
         <argument key="App\Controller\SecurityController::register" type="service" id=".service_locator.wyrb61."/>
@@ -5113,6 +5114,7 @@
         <argument key="App\Controller\SeasonController:delete" type="service" id=".service_locator.ADeF0mv"/>
         <argument key="App\Controller\SeasonController:edit" type="service" id=".service_locator.ADeF0mv"/>
         <argument key="App\Controller\SeasonController:index" type="service" id=".service_locator.RILWcPl"/>
+        <argument key="App\Controller\SeasonController:new" type="service" id=".service_locator.cypIcSv"/>
         <argument key="App\Controller\SeasonController:show" type="service" id=".service_locator.ADeF0mv"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.EbLunuf"/>
         <argument key="App\Controller\SecurityController:register" type="service" id=".service_locator.wyrb61."/>
@@ -5563,12 +5565,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.qgO3N0q"/>
+      <argument type="service" id=".service_locator.GJmUZjJ"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.qgO3N0q"/>
+      <argument type="service" id=".service_locator.GJmUZjJ"/>
     </service>
     <service id=".service_locator.UwRI0uT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -5947,7 +5949,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" alias="webpack_encore.entrypoint_lookup_collection" public="false"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.qgO3N0q"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.GJmUZjJ"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>

@@ -63,16 +63,46 @@ class __TwigTemplate_e96148d1be29c7c90394d92c6d430641fe88dd42c9d2fa978fa06cfa99e
         // line 11
         $this->displayBlock('header', $context, $blocks);
         // line 14
+        echo "        ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "flashes", [], "any", false, false, false, 14));
+        foreach ($context['_seq'] as $context["category"] => $context["messages"]) {
+            // line 15
+            echo "            ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($context["messages"]);
+            foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+                // line 16
+                echo "                <div class=\"alert alert-";
+                echo twig_escape_filter($this->env, $context["category"], "html", null, true);
+                echo "\">
+                    ";
+                // line 17
+                echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+                echo "
+                </div>
+            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 20
+            echo "        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['category'], $context['messages'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 21
         echo "        <div class=\"container-fluid\">
         ";
-        // line 15
+        // line 22
         $this->displayBlock('body', $context, $blocks);
-        // line 16
+        // line 23
         echo "        </div>
         ";
-        // line 17
+        // line 24
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 20
+        // line 27
         echo "    </body>
 </html>
 ";
@@ -149,7 +179,7 @@ class __TwigTemplate_e96148d1be29c7c90394d92c6d430641fe88dd42c9d2fa978fa06cfa99e
 
     }
 
-    // line 15
+    // line 22
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -167,7 +197,7 @@ class __TwigTemplate_e96148d1be29c7c90394d92c6d430641fe88dd42c9d2fa978fa06cfa99e
 
     }
 
-    // line 17
+    // line 24
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -177,7 +207,7 @@ class __TwigTemplate_e96148d1be29c7c90394d92c6d430641fe88dd42c9d2fa978fa06cfa99e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 18
+        // line 25
         echo "             ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
@@ -195,9 +225,14 @@ class __TwigTemplate_e96148d1be29c7c90394d92c6d430641fe88dd42c9d2fa978fa06cfa99e
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  181 => 18,  171 => 17,  153 => 15,  143 => 13,  140 => 12,  130 => 11,  117 => 7,  107 => 6,  88 => 5,  76 => 20,  74 => 17,  71 => 16,  69 => 15,  66 => 14,  64 => 11,  60 => 9,  58 => 6,  54 => 5,  48 => 1,);
+        return array (  211 => 25,  201 => 24,  183 => 22,  173 => 13,  170 => 12,  160 => 11,  147 => 7,  137 => 6,  118 => 5,  106 => 27,  104 => 24,  101 => 23,  99 => 22,  96 => 21,  90 => 20,  81 => 17,  76 => 16,  71 => 15,  66 => 14,  64 => 11,  60 => 9,  58 => 6,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -215,6 +250,13 @@ class __TwigTemplate_e96148d1be29c7c90394d92c6d430641fe88dd42c9d2fa978fa06cfa99e
         {% block header %}
              {% include 'navbar.html.twig' %}
         {% endblock %}
+        {% for category, messages in app.flashes %}
+            {% for message in messages %}
+                <div class=\"alert alert-{{ category }}\">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
         <div class=\"container-fluid\">
         {% block body %}{% endblock %}
         </div>
