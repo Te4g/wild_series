@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="es" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="CDjx2ju" resname="hello_username">
+        <source>hello_username</source>
+        <target>Hola %username%</target>
+      </trans-unit>
+      <trans-unit id="Q7UTU9q" resname="account.logout">
+        <source>account.logout</source>
+        <target>Cerrar sesión</target>
+      </trans-unit>
+      <trans-unit id="E_t5j6Q" resname="account.login">
+        <source>account.login</source>
+        <target>Iniciar sesión</target>
+      </trans-unit>
+      <trans-unit id="0vYzlEB" resname="list.series">
+        <source>list.series</source>
+        <target>Lista de series</target>
+      </trans-unit>
+      <trans-unit id="bS4v84I" resname="list.seasons">
+        <source>list.seasons</source>
+        <target>Lista de estaciones</target>
+      </trans-unit>
+      <trans-unit id="NAd6dqh" resname="list.episodes">
+        <source>list.episodes</source>
+        <target>Lista de episodios</target>
+      </trans-unit>
+      <trans-unit id="06x3Kl_" resname="list.actors">
+        <source>list.actors</source>
+        <target>Lista de actores</target>
+      </trans-unit>
+      <trans-unit id="Xc.7.ta" resname="list.comments">
+        <source>list.comments</source>
+        <target>Lista de comentarios</target>
+      </trans-unit>
+      <trans-unit id="KA1Eqx6" resname="welcome">
+        <source>welcome</source>
+        <target>Bienvenida</target>
+      </trans-unit>
+      <trans-unit id="KFxycBW" resname="&lt;h1&gt;hello_username&lt;/h1&gt;">
+        <source>&lt;h1&gt;hello_username&lt;/h1&gt;</source>
+        <target><![CDATA[__<h1>hello_username</h1>]]></target>
+      </trans-unit>
+      <trans-unit id="WmOKEoy" resname="connect">
+        <source>connect</source>
+        <target>Conectar !</target>
+      </trans-unit>
+      <trans-unit id="pO8wS6Q" resname="language">
+        <source>language</source>
+        <target>Elije lengua</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

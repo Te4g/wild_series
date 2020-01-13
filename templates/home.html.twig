@@ -1,7 +1,15 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    <h1>Bienvenue !</h1>
+
+    {% if app.user %}
+        {% trans with {'%username%': app.user.email} %}
+            <h1>hello_username</h1>
+        {% endtrans %} !
+    {% else %}
+        <h1>{{ 'connect'|trans }}</h1>
+    {% endif %}
+
 
     <a href="{{ path('wild_show', { 'slug': "walking_dead" }) }}">
         Testing show() method from WildController with a real program s slug.

@@ -1,22 +1,33 @@
 {% block header %}
-<header>
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand btn btn-primary" href="/">Accueil</a>
-        <div>
-        <a class ="btn btn-secondary" href="{{ path('program_index') }}">Liste des séries</a>
-        <a class ="btn btn-secondary" href="{{ path('season_index') }}">Liste des saisons</a>
-        <a class ="btn btn-secondary" href="{{ path('episode_index') }}">Liste des épisodes</a>
-        <a class ="btn btn-secondary" href="{{ path('actor_index') }}">Liste des actors</a>
-        <a class ="btn btn-secondary" href="{{ path('comment_index') }}">Liste des commentaires</a>
-            {% if app.user %}
-                {{ app.user.email }}
-                <a class="btn btn-primary" href="{{ path('app_logout') }}">Se déconnecter</a>
-                <a class="btn btn-info" href="{{ path('app_profile') }}">Mon compte</a>
-            {% else %}
-                <a class="btn btn-primary" href="{{ path('app_login') }}">Se connecter</a>
-            {% endif %}
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand btn btn-primary" href="{{ path('app_index') }}">{{ 'welcome'|trans }}</a>
+            <div>
+                <a class="btn btn-secondary" href="{{ path('program_index') }}">{{ 'list.series'|trans }}</a>
+                <a class="btn btn-secondary" href="{{ path('season_index') }}">{{ 'list.seasons'|trans }}</a>
+                <a class="btn btn-secondary" href="{{ path('episode_index') }}">{{ 'list.episodes'|trans }}</a>
+                <a class="btn btn-secondary" href="{{ path('actor_index') }}">{{ 'list.actors'|trans }}</a>
+                <a class="btn btn-secondary" href="{{ path('comment_index') }}">{{ 'list.comments'|trans }}</a>
+                {% if app.user %}
+                    {% trans with {'%username%': app.user.email} %}
+                        hello_username
+                    {% endtrans %} !
+                    <a class="btn btn-primary" href="{{ path('app_logout') }}"> {{ 'account.logout'|trans }}</a>
+                {% else %}
+                    <a class="btn btn-primary" href="{{ path('app_login') }}"> {{ 'account.login'|trans }}</a>
+                {% endif %}
 
-        </div>
-    </nav>
-</header>
-{%  endblock %}
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{'language' | trans}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{{ path('app_index', {'_locale' : 'en'}) }}"><span class="flag-icon flag-icon-gb"></span>English</a>
+                    <a class="dropdown-item" href="{{ path('app_index', {'_locale' : 'es'}) }}"><span class="flag-icon flag-icon-es"></span>Espanol</a>
+                    <a class="dropdown-item" href="{{ path('app_index', {'_locale' : 'fr'}) }}"><span class="flag-icon flag-icon-fr"></span>Français</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+{% endblock %}

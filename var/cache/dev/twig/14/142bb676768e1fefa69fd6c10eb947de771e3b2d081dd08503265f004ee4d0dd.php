@@ -60,58 +60,96 @@ class __TwigTemplate_c7828424ac28b2a810ef6f4bb7dd7f560a50702c2fdfc70160549e39fb9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
         // line 2
-        echo "<header>
-    <nav class=\"navbar navbar-light bg-light\">
-        <a class=\"navbar-brand btn btn-primary\" href=\"/\">Accueil</a>
-        <div>
-        <a class =\"btn btn-secondary\" href=\"";
+        echo "    <header>
+        <nav class=\"navbar navbar-light bg-light\">
+            <a class=\"navbar-brand btn btn-primary\" href=\"";
+        // line 4
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_index");
+        echo "\">";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("welcome"), "html", null, true);
+        echo "</a>
+            <div>
+                <a class=\"btn btn-secondary\" href=\"";
         // line 6
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("program_index");
-        echo "\">Liste des séries</a>
-        <a class =\"btn btn-secondary\" href=\"";
+        echo "\">";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("list.series"), "html", null, true);
+        echo "</a>
+                <a class=\"btn btn-secondary\" href=\"";
         // line 7
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("season_index");
-        echo "\">Liste des saisons</a>
-        <a class =\"btn btn-secondary\" href=\"";
+        echo "\">";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("list.seasons"), "html", null, true);
+        echo "</a>
+                <a class=\"btn btn-secondary\" href=\"";
         // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("episode_index");
-        echo "\">Liste des épisodes</a>
-        <a class =\"btn btn-secondary\" href=\"";
+        echo "\">";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("list.episodes"), "html", null, true);
+        echo "</a>
+                <a class=\"btn btn-secondary\" href=\"";
         // line 9
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("actor_index");
-        echo "\">Liste des actors</a>
-        <a class =\"btn btn-secondary\" href=\"";
+        echo "\">";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("list.actors"), "html", null, true);
+        echo "</a>
+                <a class=\"btn btn-secondary\" href=\"";
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("comment_index");
-        echo "\">Liste des commentaires</a>
-            ";
+        echo "\">";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("list.comments"), "html", null, true);
+        echo "</a>
+                ";
         // line 11
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11)) {
             // line 12
-            echo "                ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "email", [], "any", false, false, false, 12), "html", null, true);
-            echo "
-                <a class=\"btn btn-primary\" href=\"";
-            // line 13
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">Se déconnecter</a>
-                <a class=\"btn btn-info\" href=\"";
+            echo "                    ";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("hello_username", ["%username%" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "email", [], "any", false, false, false, 12)], "messages");
             // line 14
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_profile");
-            echo "\">Mon compte</a>
-            ";
+            echo " !
+                    <a class=\"btn btn-primary\" href=\"";
+            // line 15
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\"> ";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("account.logout"), "html", null, true);
+            echo "</a>
+                ";
         } else {
-            // line 16
-            echo "                <a class=\"btn btn-primary\" href=\"";
+            // line 17
+            echo "                    <a class=\"btn btn-primary\" href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-            echo "\">Se connecter</a>
-            ";
+            echo "\"> ";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("account.login"), "html", null, true);
+            echo "</a>
+                ";
         }
-        // line 18
+        // line 19
         echo "
-        </div>
-    </nav>
-</header>
+            </div>
+            <div class=\"dropdown\">
+                <button class=\"btn btn-info dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                    ";
+        // line 23
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("language"), "html", null, true);
+        echo "
+                </button>
+                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
+                    <a class=\"dropdown-item\" href=\"";
+        // line 26
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_index", ["_locale" => "en"]);
+        echo "\"><span class=\"flag-icon-eg\"></span>English</a>
+                    <a class=\"dropdown-item\" href=\"";
+        // line 27
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_index", ["_locale" => "es"]);
+        echo "\"><span class=\"flag-icon flag-icon-es\"></span>Espanol</a>
+                    <a class=\"dropdown-item\" href=\"";
+        // line 28
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_index", ["_locale" => "fr"]);
+        echo "\"><span class=\"flag-icon flag-icon-fr\"></span>Français</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -128,32 +166,43 @@ class __TwigTemplate_c7828424ac28b2a810ef6f4bb7dd7f560a50702c2fdfc70160549e39fb9
 
     public function getDebugInfo()
     {
-        return array (  111 => 18,  105 => 16,  100 => 14,  96 => 13,  91 => 12,  89 => 11,  85 => 10,  81 => 9,  77 => 8,  73 => 7,  69 => 6,  63 => 2,  44 => 1,);
+        return array (  147 => 28,  143 => 27,  139 => 26,  133 => 23,  127 => 19,  119 => 17,  112 => 15,  109 => 14,  106 => 12,  104 => 11,  98 => 10,  92 => 9,  86 => 8,  80 => 7,  74 => 6,  67 => 4,  63 => 2,  44 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% block header %}
-<header>
-    <nav class=\"navbar navbar-light bg-light\">
-        <a class=\"navbar-brand btn btn-primary\" href=\"/\">Accueil</a>
-        <div>
-        <a class =\"btn btn-secondary\" href=\"{{ path('program_index') }}\">Liste des séries</a>
-        <a class =\"btn btn-secondary\" href=\"{{ path('season_index') }}\">Liste des saisons</a>
-        <a class =\"btn btn-secondary\" href=\"{{ path('episode_index') }}\">Liste des épisodes</a>
-        <a class =\"btn btn-secondary\" href=\"{{ path('actor_index') }}\">Liste des actors</a>
-        <a class =\"btn btn-secondary\" href=\"{{ path('comment_index') }}\">Liste des commentaires</a>
-            {% if app.user %}
-                {{ app.user.email }}
-                <a class=\"btn btn-primary\" href=\"{{ path('app_logout') }}\">Se déconnecter</a>
-                <a class=\"btn btn-info\" href=\"{{ path('app_profile') }}\">Mon compte</a>
-            {% else %}
-                <a class=\"btn btn-primary\" href=\"{{ path('app_login') }}\">Se connecter</a>
-            {% endif %}
+    <header>
+        <nav class=\"navbar navbar-light bg-light\">
+            <a class=\"navbar-brand btn btn-primary\" href=\"{{ path('app_index') }}\">{{ 'welcome'|trans }}</a>
+            <div>
+                <a class=\"btn btn-secondary\" href=\"{{ path('program_index') }}\">{{ 'list.series'|trans }}</a>
+                <a class=\"btn btn-secondary\" href=\"{{ path('season_index') }}\">{{ 'list.seasons'|trans }}</a>
+                <a class=\"btn btn-secondary\" href=\"{{ path('episode_index') }}\">{{ 'list.episodes'|trans }}</a>
+                <a class=\"btn btn-secondary\" href=\"{{ path('actor_index') }}\">{{ 'list.actors'|trans }}</a>
+                <a class=\"btn btn-secondary\" href=\"{{ path('comment_index') }}\">{{ 'list.comments'|trans }}</a>
+                {% if app.user %}
+                    {% trans with {'%username%': app.user.email} %}
+                        hello_username
+                    {% endtrans %} !
+                    <a class=\"btn btn-primary\" href=\"{{ path('app_logout') }}\"> {{ 'account.logout'|trans }}</a>
+                {% else %}
+                    <a class=\"btn btn-primary\" href=\"{{ path('app_login') }}\"> {{ 'account.login'|trans }}</a>
+                {% endif %}
 
-        </div>
-    </nav>
-</header>
-{%  endblock %}", "navbar.html.twig", "/home/te4g/PhpstormProjects/symfony_quest/wild-series/templates/navbar.html.twig");
+            </div>
+            <div class=\"dropdown\">
+                <button class=\"btn btn-info dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                    {{'language' | trans}}
+                </button>
+                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
+                    <a class=\"dropdown-item\" href=\"{{ path('app_index', {'_locale' : 'en'}) }}\"><span class=\"flag-icon-eg\"></span>English</a>
+                    <a class=\"dropdown-item\" href=\"{{ path('app_index', {'_locale' : 'es'}) }}\"><span class=\"flag-icon flag-icon-es\"></span>Espanol</a>
+                    <a class=\"dropdown-item\" href=\"{{ path('app_index', {'_locale' : 'fr'}) }}\"><span class=\"flag-icon flag-icon-fr\"></span>Français</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+{% endblock %}", "navbar.html.twig", "/home/te4g/PhpstormProjects/symfony_quest/wild-series/templates/navbar.html.twig");
     }
 }

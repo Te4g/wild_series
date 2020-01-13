@@ -224,6 +224,23 @@ $catalogueEn = new MessageCatalogue('en', array (
     'Account is disabled.' => 'Account is disabled.',
     'Account is locked.' => 'Account is locked.',
   ),
+  'messages' => 
+  array (
+    'hello' => 'Hello',
+    'account.registration' => 'Register',
+    'account.login' => 'Sign In',
+    'hello_username' => 'Hello %username%',
+    'account.logout' => 'Logout',
+    'list.series' => 'List of series',
+    'list.seasons' => 'List of seasons',
+    'list.episodes' => 'List of episodes',
+    'list.actors' => 'List of actors',
+    'list.comments' => 'List of comments',
+    'welcome' => 'Welcome',
+    '<h1>hello_username</h1>' => 'Hi %username%',
+    'connect' => 'Sign in !',
+    'language' => 'Choose a language',
+  ),
 ));
 $catalogue->addFallbackCatalogue($catalogueEn);
 

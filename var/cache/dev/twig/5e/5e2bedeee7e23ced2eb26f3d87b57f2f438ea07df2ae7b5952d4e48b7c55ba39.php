@@ -65,17 +65,35 @@ class __TwigTemplate_9e152de9366af81d58887e554a45c06c1be66f1110219dd3f3ab63ecb13
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1>Bienvenue !</h1>
+        echo "
+    ";
+        // line 5
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 5, $this->source); })()), "user", [], "any", false, false, false, 5)) {
+            // line 6
+            echo "        ";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("<h1>hello_username</h1>", ["%username%" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 6, $this->source); })()), "user", [], "any", false, false, false, 6), "email", [], "any", false, false, false, 6)], "messages");
+            // line 8
+            echo " !
+    ";
+        } else {
+            // line 10
+            echo "        <h1>";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("connect"), "html", null, true);
+            echo "</h1>
+    ";
+        }
+        // line 12
+        echo "
 
     <a href=\"";
-        // line 6
+        // line 14
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_show", ["slug" => "walking_dead"]);
         echo "\">
         Testing show() method from WildController with a real program s slug.
     </a>
     <br>
     <a href=\"";
-        // line 10
+        // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("wild_index");
         echo "\">
         Testing index() method from WildController to view all programs.
@@ -101,7 +119,7 @@ class __TwigTemplate_9e152de9366af81d58887e554a45c06c1be66f1110219dd3f3ab63ecb13
 
     public function getDebugInfo()
     {
-        return array (  79 => 10,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  97 => 18,  90 => 14,  86 => 12,  80 => 10,  76 => 8,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -109,7 +127,15 @@ class __TwigTemplate_9e152de9366af81d58887e554a45c06c1be66f1110219dd3f3ab63ecb13
         return new Source("{% extends \"base.html.twig\" %}
 
 {% block body %}
-    <h1>Bienvenue !</h1>
+
+    {% if app.user %}
+        {% trans with {'%username%': app.user.email} %}
+            <h1>hello_username</h1>
+        {% endtrans %} !
+    {% else %}
+        <h1>{{ 'connect'|trans }}</h1>
+    {% endif %}
+
 
     <a href=\"{{ path('wild_show', { 'slug': \"walking_dead\" }) }}\">
         Testing show() method from WildController with a real program s slug.

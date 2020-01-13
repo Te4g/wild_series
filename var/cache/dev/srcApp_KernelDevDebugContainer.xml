@@ -11,7 +11,6 @@
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
-      <parameter key="DoctrineCacheBundle">Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="DoctrineMigrationsBundle">Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
@@ -32,10 +31,6 @@
       <parameter key="SensioFrameworkExtraBundle" type="collection">
         <parameter key="path">/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/sensio/framework-extra-bundle/src</parameter>
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
-      </parameter>
-      <parameter key="DoctrineCacheBundle" type="collection">
-        <parameter key="path">/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/doctrine/doctrine-cache-bundle</parameter>
-        <parameter key="namespace">Doctrine\Bundle\DoctrineCacheBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
         <parameter key="path">/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/doctrine/doctrine-bundle</parameter>
@@ -91,7 +86,7 @@
     <parameter key="kernel.secret">%env(APP_SECRET)%</parameter>
     <parameter key="kernel.http_method_override">true</parameter>
     <parameter key="kernel.trusted_hosts" type="collection"/>
-    <parameter key="kernel.default_locale">en</parameter>
+    <parameter key="kernel.default_locale">fr</parameter>
     <parameter key="templating.helper.code.file_link_format">null</parameter>
     <parameter key="debug.file_link_format">null</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
@@ -127,48 +122,6 @@
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="serializer.mapping.cache.file">/home/te4g/PhpstormProjects/symfony_quest/wild-series/var/cache/dev/serialization.php</parameter>
     <parameter key="serializer.mapping.cache.prefix"></parameter>
-    <parameter key="doctrine_cache.apc.class">Doctrine\Common\Cache\ApcCache</parameter>
-    <parameter key="doctrine_cache.apcu.class">Doctrine\Common\Cache\ApcuCache</parameter>
-    <parameter key="doctrine_cache.array.class">Doctrine\Common\Cache\ArrayCache</parameter>
-    <parameter key="doctrine_cache.chain.class">Doctrine\Common\Cache\ChainCache</parameter>
-    <parameter key="doctrine_cache.couchbase.class">Doctrine\Common\Cache\CouchbaseCache</parameter>
-    <parameter key="doctrine_cache.couchbase.connection.class">Couchbase</parameter>
-    <parameter key="doctrine_cache.couchbase.hostnames">localhost:8091</parameter>
-    <parameter key="doctrine_cache.file_system.class">Doctrine\Common\Cache\FilesystemCache</parameter>
-    <parameter key="doctrine_cache.php_file.class">Doctrine\Common\Cache\PhpFileCache</parameter>
-    <parameter key="doctrine_cache.memcache.class">Doctrine\Common\Cache\MemcacheCache</parameter>
-    <parameter key="doctrine_cache.memcache.connection.class">Memcache</parameter>
-    <parameter key="doctrine_cache.memcache.host">localhost</parameter>
-    <parameter key="doctrine_cache.memcache.port">11211</parameter>
-    <parameter key="doctrine_cache.memcached.class">Doctrine\Common\Cache\MemcachedCache</parameter>
-    <parameter key="doctrine_cache.memcached.connection.class">Memcached</parameter>
-    <parameter key="doctrine_cache.memcached.host">localhost</parameter>
-    <parameter key="doctrine_cache.memcached.port">11211</parameter>
-    <parameter key="doctrine_cache.mongodb.class">Doctrine\Common\Cache\MongoDBCache</parameter>
-    <parameter key="doctrine_cache.mongodb.collection.class">MongoCollection</parameter>
-    <parameter key="doctrine_cache.mongodb.connection.class">MongoClient</parameter>
-    <parameter key="doctrine_cache.mongodb.server">localhost:27017</parameter>
-    <parameter key="doctrine_cache.predis.client.class">Predis\Client</parameter>
-    <parameter key="doctrine_cache.predis.scheme">tcp</parameter>
-    <parameter key="doctrine_cache.predis.host">localhost</parameter>
-    <parameter key="doctrine_cache.predis.port">6379</parameter>
-    <parameter key="doctrine_cache.redis.class">Doctrine\Common\Cache\RedisCache</parameter>
-    <parameter key="doctrine_cache.redis.connection.class">Redis</parameter>
-    <parameter key="doctrine_cache.redis.host">localhost</parameter>
-    <parameter key="doctrine_cache.redis.port">6379</parameter>
-    <parameter key="doctrine_cache.riak.class">Doctrine\Common\Cache\RiakCache</parameter>
-    <parameter key="doctrine_cache.riak.bucket.class">Riak\Bucket</parameter>
-    <parameter key="doctrine_cache.riak.connection.class">Riak\Connection</parameter>
-    <parameter key="doctrine_cache.riak.bucket_property_list.class">Riak\BucketPropertyList</parameter>
-    <parameter key="doctrine_cache.riak.host">localhost</parameter>
-    <parameter key="doctrine_cache.riak.port">8087</parameter>
-    <parameter key="doctrine_cache.sqlite3.class">Doctrine\Common\Cache\SQLite3Cache</parameter>
-    <parameter key="doctrine_cache.sqlite3.connection.class">SQLite3</parameter>
-    <parameter key="doctrine_cache.void.class">Doctrine\Common\Cache\VoidCache</parameter>
-    <parameter key="doctrine_cache.wincache.class">Doctrine\Common\Cache\WinCacheCache</parameter>
-    <parameter key="doctrine_cache.xcache.class">Doctrine\Common\Cache\XcacheCache</parameter>
-    <parameter key="doctrine_cache.zenddata.class">Doctrine\Common\Cache\ZendDataCache</parameter>
-    <parameter key="doctrine_cache.security.acl.cache.class">Doctrine\Bundle\DoctrineCacheBundle\Acl\Model\AclCache</parameter>
     <parameter key="doctrine.dbal.logger.chain.class">Doctrine\DBAL\Logging\LoggerChain</parameter>
     <parameter key="doctrine.dbal.logger.profiling.class">Doctrine\DBAL\Logging\DebugStack</parameter>
     <parameter key="doctrine.dbal.logger.class">Symfony\Bridge\Doctrine\Logger\DbalLogger</parameter>
@@ -358,22 +311,7 @@
         <parameter>@WebProfiler/Collector/config.html.twig</parameter>
       </parameter>
     </parameter>
-    <parameter key="console.command.ids" type="collection">
-      <parameter>console.command.public_alias.doctrine_cache.contains_command</parameter>
-      <parameter>console.command.public_alias.doctrine_cache.delete_command</parameter>
-      <parameter>console.command.public_alias.doctrine_cache.flush_command</parameter>
-      <parameter>console.command.public_alias.doctrine_cache.stats_command</parameter>
-      <parameter>console.command.public_alias.doctrine_migrations.diff_command</parameter>
-      <parameter>console.command.public_alias.doctrine_migrations.dump_schema_command</parameter>
-      <parameter>console.command.public_alias.doctrine_migrations.execute_command</parameter>
-      <parameter>console.command.public_alias.doctrine_migrations.generate_command</parameter>
-      <parameter>console.command.public_alias.doctrine_migrations.latest_command</parameter>
-      <parameter>console.command.public_alias.doctrine_migrations.migrate_command</parameter>
-      <parameter>console.command.public_alias.doctrine_migrations.rollup_command</parameter>
-      <parameter>console.command.public_alias.doctrine_migrations.status_command</parameter>
-      <parameter>console.command.public_alias.doctrine_migrations.up_to_date_command</parameter>
-      <parameter>console.command.public_alias.doctrine_migrations.version_command</parameter>
-    </parameter>
+    <parameter key="console.command.ids" type="collection"/>
   </parameters>
   <services>
     <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" public="true" synthetic="true"/>
@@ -551,7 +489,7 @@
       <tag name="container.hot_path"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="request_stack"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="service" id="router.default" on-invalid="ignore"/>
     </service>
     <service id="validate_request_listener" class="Symfony\Component\HttpKernel\EventListener\ValidateRequestListener" public="false">
@@ -626,6 +564,7 @@
         <argument key="debug.validator" type="service" id="debug.validator" on-invalid="ignore_uninitialized"/>
         <argument key="debug.stopwatch" type="service" id="debug.stopwatch" on-invalid="ignore_uninitialized"/>
         <argument key="debug.event_dispatcher" type="service" id="debug.event_dispatcher" on-invalid="ignore_uninitialized"/>
+        <argument key="doctrine" type="service" id="doctrine" on-invalid="ignore_uninitialized"/>
         <argument key="form.type.entity" type="service" id="form.type.entity" on-invalid="ignore_uninitialized"/>
         <argument key="security.token_storage" type="service" id="security.token_storage" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
@@ -648,6 +587,7 @@
         <argument key="debug.validator">reset</argument>
         <argument key="debug.stopwatch">reset</argument>
         <argument key="debug.event_dispatcher">reset</argument>
+        <argument key="doctrine">reset</argument>
         <argument key="form.type.entity">reset</argument>
         <argument key="security.token_storage">setToken</argument>
         <argument key="cache.security_expression_language">reset</argument>
@@ -745,6 +685,9 @@
         <argument>cache.annotations</argument>
         <argument>cache.property_info</argument>
         <argument>cache.messenger.restart_workers_signal</argument>
+        <argument>cache.doctrine.orm.default.metadata</argument>
+        <argument>cache.doctrine.orm.default.result</argument>
+        <argument>cache.doctrine.orm.default.query</argument>
         <argument>cache.security_expression_language</argument>
         <argument>cache.webpack_encore</argument>
       </argument>
@@ -831,7 +774,7 @@
       <argument type="service" id="translation.writer"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/translations</argument>
       <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/templates</argument>
       <argument type="collection">
@@ -1064,6 +1007,9 @@
         <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
         <argument key="cache.property_info" type="service" id="cache.property_info" on-invalid="ignore_uninitialized"/>
         <argument key="cache.messenger.restart_workers_signal" type="service" id="cache.messenger.restart_workers_signal" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.doctrine.orm.default.metadata" type="service" id="cache.doctrine.orm.default.metadata" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.doctrine.orm.default.result" type="service" id="cache.doctrine.orm.default.result" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.doctrine.orm.default.query" type="service" id="cache.doctrine.orm.default.query" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
         <argument key="cache.webpack_encore" type="service" id="cache.webpack_encore" on-invalid="ignore_uninitialized"/>
       </argument>
@@ -1332,7 +1278,7 @@
       <tag name="kernel.locale_aware"/>
       <argument type="service" id=".service_locator.yQVjGlt"/>
       <argument type="service" id="translator.formatter.default"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="collection">
         <argument key="translation.loader.php" type="collection">
           <argument>php</argument>
@@ -1429,11 +1375,17 @@
             <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/symfony/validator/Resources/translations/validators.en.xlf</argument>
             <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/symfony/form/Resources/translations/validators.en.xlf</argument>
             <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/symfony/security-core/Resources/translations/security.en.xlf</argument>
+            <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/translations/messages.en.xlf</argument>
+            <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/translations/security.en.xlf</argument>
+            <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/translations/validators.en.xlf</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/symfony/validator/Resources/translations/validators.es.xlf</argument>
             <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/symfony/form/Resources/translations/validators.es.xlf</argument>
             <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/symfony/security-core/Resources/translations/security.es.xlf</argument>
+            <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/translations/messages.es.xlf</argument>
+            <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/translations/security.es.xlf</argument>
+            <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/translations/validators.es.xlf</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/symfony/validator/Resources/translations/validators.et.xlf</argument>
@@ -1457,6 +1409,9 @@
             <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/symfony/validator/Resources/translations/validators.fr.xlf</argument>
             <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/symfony/form/Resources/translations/validators.fr.xlf</argument>
             <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/symfony/security-core/Resources/translations/security.fr.xlf</argument>
+            <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/translations/messages.fr.xlf</argument>
+            <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/translations/security.fr.xlf</argument>
+            <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/translations/validators.fr.xlf</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/symfony/validator/Resources/translations/validators.gl.xlf</argument>
@@ -1633,8 +1588,6 @@
           <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/src/Resources/FrameworkBundle/translations</argument>
           <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/sensio/framework-extra-bundle/src/Resources/translations</argument>
           <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/src/Resources/SensioFrameworkExtraBundle/translations</argument>
-          <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/doctrine/doctrine-cache-bundle/Resources/translations</argument>
-          <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/src/Resources/DoctrineCacheBundle/translations</argument>
           <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/doctrine/doctrine-bundle/Resources/translations</argument>
           <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/src/Resources/DoctrineBundle/translations</argument>
           <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/doctrine/doctrine-migrations-bundle/Resources/translations</argument>
@@ -1658,6 +1611,41 @@
           <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/vendor/doctrine/doctrine-fixtures-bundle/Resources/translations</argument>
           <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/src/Resources/DoctrineFixturesBundle/translations</argument>
           <argument>/home/te4g/PhpstormProjects/symfony_quest/wild-series/src/Resources/translations</argument>
+        </argument>
+        <argument key="cache_vary" type="collection">
+          <argument key="scanned_directories" type="collection">
+            <argument>vendor/symfony/validator/Resources/translations</argument>
+            <argument>vendor/symfony/form/Resources/translations</argument>
+            <argument>vendor/symfony/security-core/Resources/translations</argument>
+            <argument>translations</argument>
+            <argument>vendor/symfony/framework-bundle/Resources/translations</argument>
+            <argument>src/Resources/FrameworkBundle/translations</argument>
+            <argument>vendor/sensio/framework-extra-bundle/src/Resources/translations</argument>
+            <argument>src/Resources/SensioFrameworkExtraBundle/translations</argument>
+            <argument>vendor/doctrine/doctrine-bundle/Resources/translations</argument>
+            <argument>src/Resources/DoctrineBundle/translations</argument>
+            <argument>vendor/doctrine/doctrine-migrations-bundle/Resources/translations</argument>
+            <argument>src/Resources/DoctrineMigrationsBundle/translations</argument>
+            <argument>vendor/symfony/security-bundle/Resources/translations</argument>
+            <argument>src/Resources/SecurityBundle/translations</argument>
+            <argument>vendor/symfony/twig-bundle/Resources/translations</argument>
+            <argument>src/Resources/TwigBundle/translations</argument>
+            <argument>vendor/symfony/web-profiler-bundle/Resources/translations</argument>
+            <argument>src/Resources/WebProfilerBundle/translations</argument>
+            <argument>vendor/symfony/monolog-bundle/Resources/translations</argument>
+            <argument>src/Resources/MonologBundle/translations</argument>
+            <argument>vendor/symfony/debug-bundle/Resources/translations</argument>
+            <argument>src/Resources/DebugBundle/translations</argument>
+            <argument>vendor/symfony/maker-bundle/src/Resources/translations</argument>
+            <argument>src/Resources/MakerBundle/translations</argument>
+            <argument>vendor/symfony/web-server-bundle/Resources/translations</argument>
+            <argument>src/Resources/WebServerBundle/translations</argument>
+            <argument>vendor/symfony/webpack-encore-bundle/src/Resources/translations</argument>
+            <argument>src/Resources/WebpackEncoreBundle/translations</argument>
+            <argument>vendor/doctrine/doctrine-fixtures-bundle/Resources/translations</argument>
+            <argument>src/Resources/DoctrineFixturesBundle/translations</argument>
+            <argument>src/Resources/translations</argument>
+          </argument>
         </argument>
       </argument>
       <call method="setConfigCacheFactory">
@@ -2006,6 +1994,18 @@
         <argument type="service" id="cache.messenger.restart_workers_signal"/>
       </call>
       <call method="addInstance">
+        <argument>cache.doctrine.orm.default.metadata</argument>
+        <argument type="service" id="cache.doctrine.orm.default.metadata"/>
+      </call>
+      <call method="addInstance">
+        <argument>cache.doctrine.orm.default.result</argument>
+        <argument type="service" id="cache.doctrine.orm.default.result"/>
+      </call>
+      <call method="addInstance">
+        <argument>cache.doctrine.orm.default.query</argument>
+        <argument type="service" id="cache.doctrine.orm.default.query"/>
+      </call>
+      <call method="addInstance">
         <argument>cache.security_expression_language</argument>
         <argument type="service" id="cache.security_expression_language"/>
       </call>
@@ -2266,6 +2266,14 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
+        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -2579,7 +2587,7 @@
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="parameter_bag" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.router" on-invalid="ignore"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <call method="setConfigCacheFactory">
         <argument type="service" id="config_cache_factory"/>
       </call>
@@ -2680,6 +2688,7 @@
         <argument type="service" id="serializer.normalizer.json_serializable"/>
         <argument type="service" id="serializer.normalizer.datetime"/>
         <argument type="service" id="serializer.normalizer.constraint_violation_list"/>
+        <argument type="service" id="serializer.normalizer.datetimezone"/>
         <argument type="service" id="serializer.normalizer.dateinterval"/>
         <argument type="service" id="serializer.normalizer.data_uri"/>
         <argument type="service" id="serializer.denormalizer.array"/>
@@ -2699,6 +2708,9 @@
       <tag name="serializer.normalizer" priority="-915"/>
       <argument type="collection"/>
       <argument type="service" id="serializer.name_converter.metadata_aware"/>
+    </service>
+    <service id="serializer.normalizer.datetimezone" class="Symfony\Component\Serializer\Normalizer\DateTimeZoneNormalizer" public="false">
+      <tag name="serializer.normalizer" priority="-915"/>
     </service>
     <service id="serializer.normalizer.dateinterval" class="Symfony\Component\Serializer\Normalizer\DateIntervalNormalizer" public="false">
       <tag name="serializer.normalizer" priority="-915"/>
@@ -2907,36 +2919,6 @@
     <service id="framework_extra_bundle.argument_name_convertor" class="Sensio\Bundle\FrameworkExtraBundle\Request\ArgumentNameConverter" public="false">
       <argument type="service" id="argument_metadata_factory"/>
     </service>
-    <service id="doctrine_cache.abstract.apc" class="Doctrine\Common\Cache\ApcCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.apcu" class="Doctrine\Common\Cache\ApcuCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.array" class="Doctrine\Common\Cache\ArrayCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.chain" class="Doctrine\Common\Cache\ChainCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.couchbase" class="Doctrine\Common\Cache\CouchbaseCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.file_system" class="Doctrine\Common\Cache\FilesystemCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.php_file" class="Doctrine\Common\Cache\PhpFileCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.memcache" class="Doctrine\Common\Cache\MemcacheCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.memcached" class="Doctrine\Common\Cache\MemcachedCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.mongodb" class="Doctrine\Common\Cache\MongoDBCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.redis" class="Doctrine\Common\Cache\RedisCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.predis" class="Doctrine\Common\Cache\PredisCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.riak" class="Doctrine\Common\Cache\RiakCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.sqlite3" class="Doctrine\Common\Cache\SQLite3Cache" abstract="true"/>
-    <service id="doctrine_cache.abstract.void" class="Doctrine\Common\Cache\VoidCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.wincache" class="Doctrine\Common\Cache\WinCacheCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.xcache" class="Doctrine\Common\Cache\XcacheCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.zenddata" class="Doctrine\Common\Cache\ZendDataCache" abstract="true"/>
-    <service id="doctrine_cache.contains_command" class="Doctrine\Bundle\DoctrineCacheBundle\Command\ContainsCommand">
-      <tag name="console.command"/>
-    </service>
-    <service id="doctrine_cache.delete_command" class="Doctrine\Bundle\DoctrineCacheBundle\Command\DeleteCommand">
-      <tag name="console.command"/>
-    </service>
-    <service id="doctrine_cache.flush_command" class="Doctrine\Bundle\DoctrineCacheBundle\Command\FlushCommand">
-      <tag name="console.command"/>
-    </service>
-    <service id="doctrine_cache.stats_command" class="Doctrine\Bundle\DoctrineCacheBundle\Command\StatsCommand">
-      <tag name="console.command"/>
-    </service>
     <service id="doctrine.dbal.logger.chain" class="Doctrine\DBAL\Logging\LoggerChain" public="false" abstract="true">
       <call method="addLogger">
         <argument type="service" id="doctrine.dbal.logger"/>
@@ -2968,6 +2950,7 @@
     </service>
     <service id="doctrine.dbal.connection.configuration" class="Doctrine\DBAL\Configuration" public="false" abstract="true"/>
     <service id="doctrine" class="Doctrine\Bundle\DoctrineBundle\Registry" public="true">
+      <tag name="kernel.reset" method="reset"/>
       <argument type="service" id="service_container"/>
       <argument>%doctrine.connections%</argument>
       <argument>%doctrine.entity_managers%</argument>
@@ -2978,6 +2961,9 @@
       <tag name="twig.extension"/>
     </service>
     <service id="doctrine.dbal.schema_asset_filter_manager" class="Doctrine\Bundle\DoctrineBundle\Dbal\SchemaAssetsFilterManager" public="false" abstract="true"/>
+    <service id="doctrine.dbal.well_known_schema_asset_filter" class="Doctrine\Bundle\DoctrineBundle\Dbal\BlacklistSchemaAssetFilter" public="false">
+      <argument type="collection"/>
+    </service>
     <service id="doctrine.database_create_command" class="Doctrine\Bundle\DoctrineBundle\Command\CreateDatabaseDoctrineCommand">
       <tag name="console.command" command="doctrine:database:create"/>
       <argument type="service" id="doctrine"/>
@@ -2992,11 +2978,10 @@
         <argument>doctrine:database:drop</argument>
       </call>
     </service>
-    <service id="doctrine.generate_entities_command" class="Doctrine\Bundle\DoctrineBundle\Command\GenerateEntitiesDoctrineCommand">
-      <tag name="console.command" command="doctrine:generate:entities"/>
-      <argument type="service" id="doctrine"/>
+    <service id="doctrine.database_import_command" class="Doctrine\Bundle\DoctrineBundle\Command\Proxy\ImportDoctrineCommand">
+      <tag name="console.command" command="doctrine:database:import"/>
       <call method="setName">
-        <argument>doctrine:generate:entities</argument>
+        <argument>doctrine:database:import</argument>
       </call>
     </service>
     <service id="doctrine.query_sql_command" class="Doctrine\Bundle\DoctrineBundle\Command\Proxy\RunSqlDoctrineCommand">
@@ -3090,6 +3075,10 @@
     <service id="doctrine.orm.listeners.resolve_target_entity" class="Doctrine\ORM\Tools\ResolveTargetEntityListener" public="false"/>
     <service id="doctrine.orm.naming_strategy.default" class="Doctrine\ORM\Mapping\DefaultNamingStrategy" public="false"/>
     <service id="doctrine.orm.naming_strategy.underscore" class="Doctrine\ORM\Mapping\UnderscoreNamingStrategy" public="false"/>
+    <service id="doctrine.orm.naming_strategy.underscore_number_aware" class="Doctrine\ORM\Mapping\UnderscoreNamingStrategy" public="false">
+      <argument>0</argument>
+      <argument>true</argument>
+    </service>
     <service id="doctrine.orm.quote_strategy.default" class="Doctrine\ORM\Mapping\DefaultQuoteStrategy" public="false"/>
     <service id="doctrine.orm.quote_strategy.ansi" class="Doctrine\ORM\Mapping\AnsiQuoteStrategy" public="false"/>
     <service id="doctrine.cache_clear_metadata_command" class="Doctrine\Bundle\DoctrineBundle\Command\Proxy\ClearMetadataCacheDoctrineCommand">
@@ -3146,12 +3135,6 @@
         <argument>doctrine:cache:clear-entity-region</argument>
       </call>
     </service>
-    <service id="doctrine.database_import_command" class="Doctrine\Bundle\DoctrineBundle\Command\Proxy\ImportDoctrineCommand">
-      <tag name="console.command" command="doctrine:database:import"/>
-      <call method="setName">
-        <argument>doctrine:database:import</argument>
-      </call>
-    </service>
     <service id="doctrine.mapping_info_command" class="Doctrine\Bundle\DoctrineBundle\Command\Proxy\InfoDoctrineCommand">
       <tag name="console.command" command="doctrine:mapping:info"/>
       <call method="setName">
@@ -3197,13 +3180,13 @@
         </argument>
       </call>
       <call method="setMetadataCacheImpl">
-        <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
+        <argument type="service" id="doctrine.orm.cache.provider.cache.doctrine.orm.default.metadata"/>
       </call>
       <call method="setQueryCacheImpl">
-        <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_query_cache"/>
+        <argument type="service" id="doctrine.orm.cache.provider.cache.doctrine.orm.default.query"/>
       </call>
       <call method="setResultCacheImpl">
-        <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_result_cache"/>
+        <argument type="service" id="doctrine.orm.cache.provider.cache.doctrine.orm.default.result"/>
       </call>
       <call method="setMetadataDriverImpl">
         <argument type="service" id="doctrine.orm.default_metadata_driver"/>
@@ -3248,20 +3231,26 @@
         <argument>App\Entity</argument>
       </call>
     </service>
-    <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
-      <call method="setNamespace">
-        <argument>sf_orm_default_3b71660a301c51850b0b580aa1d0e9fc2b8a41996af2c077f2f5cba653897a74</argument>
-      </call>
+    <service id="cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="true">
+      <tag name="cache.pool"/>
+      <argument type="service" id="cache.doctrine.orm.default.metadata.recorder_inner"/>
     </service>
-    <service id="doctrine_cache.providers.doctrine.orm.default_result_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
-      <call method="setNamespace">
-        <argument>sf_orm_default_3b71660a301c51850b0b580aa1d0e9fc2b8a41996af2c077f2f5cba653897a74</argument>
-      </call>
+    <service id="doctrine.orm.cache.provider.cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\DoctrineProvider">
+      <argument type="service" id="cache.doctrine.orm.default.metadata"/>
     </service>
-    <service id="doctrine_cache.providers.doctrine.orm.default_query_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
-      <call method="setNamespace">
-        <argument>sf_orm_default_3b71660a301c51850b0b580aa1d0e9fc2b8a41996af2c077f2f5cba653897a74</argument>
-      </call>
+    <service id="cache.doctrine.orm.default.result" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="true">
+      <tag name="cache.pool"/>
+      <argument type="service" id="cache.doctrine.orm.default.result.recorder_inner"/>
+    </service>
+    <service id="doctrine.orm.cache.provider.cache.doctrine.orm.default.result" class="Symfony\Component\Cache\DoctrineProvider">
+      <argument type="service" id="cache.doctrine.orm.default.result"/>
+    </service>
+    <service id="cache.doctrine.orm.default.query" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="true">
+      <tag name="cache.pool"/>
+      <argument type="service" id="cache.doctrine.orm.default.query.recorder_inner"/>
+    </service>
+    <service id="doctrine.orm.cache.provider.cache.doctrine.orm.default.query" class="Symfony\Component\Cache\DoctrineProvider">
+      <argument type="service" id="cache.doctrine.orm.default.query"/>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\Bundle\DoctrineBundle\Mapping\ContainerEntityListenerResolver">
       <argument type="service" id="service_container"/>
@@ -3287,33 +3276,63 @@
     </service>
     <service id="doctrine_migrations.diff_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsDiffDoctrineCommand">
       <tag name="console.command"/>
+      <call method="setName">
+        <argument>doctrine:migrations:diff</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.dump_schema_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsDumpSchemaDoctrineCommand">
       <tag name="console.command"/>
+      <call method="setName">
+        <argument>doctrine:migrations:dump-schema</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.execute_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsExecuteDoctrineCommand">
       <tag name="console.command"/>
+      <call method="setName">
+        <argument>doctrine:migrations:execute</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.generate_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsGenerateDoctrineCommand">
       <tag name="console.command"/>
+      <call method="setName">
+        <argument>doctrine:migrations:generate</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.latest_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsLatestDoctrineCommand">
       <tag name="console.command"/>
+      <call method="setName">
+        <argument>doctrine:migrations:latest</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.migrate_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsMigrateDoctrineCommand">
       <tag name="console.command"/>
+      <call method="setName">
+        <argument>doctrine:migrations:migrate</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.rollup_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsRollupDoctrineCommand">
       <tag name="console.command"/>
+      <call method="setName">
+        <argument>doctrine:migrations:rollup</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.status_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsStatusDoctrineCommand">
       <tag name="console.command"/>
+      <call method="setName">
+        <argument>doctrine:migrations:status</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.up_to_date_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsUpToDateDoctrineCommand">
       <tag name="console.command"/>
+      <call method="setName">
+        <argument>doctrine:migrations:up-to-date</argument>
+      </call>
     </service>
     <service id="doctrine_migrations.version_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsVersionDoctrineCommand">
       <tag name="console.command"/>
+      <call method="setName">
+        <argument>doctrine:migrations:version</argument>
+      </call>
     </service>
     <service id="security.authorization_checker" class="Symfony\Component\Security\Core\Authorization\AuthorizationChecker" public="true">
       <argument type="service" id="security.token_storage"/>
@@ -5603,7 +5622,7 @@
     <service id=".errored..service_locator.Ggk.SCy.App\Entity\Program" class="App\Entity\Program"/>
     <service id=".errored..service_locator.ADeF0mv.App\Entity\Season" class="App\Entity\Season"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
-      <argument type="service" id=".service_locator.5iAgPfi"/>
+      <argument type="service" id=".service_locator.jhPAQB8"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -5627,7 +5646,7 @@
         <argument key="debug:form">console.command.form_debug</argument>
         <argument key="doctrine:database:create">doctrine.database_create_command</argument>
         <argument key="doctrine:database:drop">doctrine.database_drop_command</argument>
-        <argument key="doctrine:generate:entities">doctrine.generate_entities_command</argument>
+        <argument key="doctrine:database:import">doctrine.database_import_command</argument>
         <argument key="doctrine:query:sql">doctrine.query_sql_command</argument>
         <argument key="doctrine:cache:clear-metadata">doctrine.cache_clear_metadata_command</argument>
         <argument key="doctrine:cache:clear-query">doctrine.cache_clear_query_cache_command</argument>
@@ -5638,13 +5657,22 @@
         <argument key="doctrine:schema:drop">doctrine.schema_drop_command</argument>
         <argument key="doctrine:ensure-production-settings">doctrine.ensure_production_settings_command</argument>
         <argument key="doctrine:cache:clear-entity-region">doctrine.clear_entity_region_command</argument>
-        <argument key="doctrine:database:import">doctrine.database_import_command</argument>
         <argument key="doctrine:mapping:info">doctrine.mapping_info_command</argument>
         <argument key="doctrine:cache:clear-query-region">doctrine.clear_query_region_command</argument>
         <argument key="doctrine:query:dql">doctrine.query_dql_command</argument>
         <argument key="doctrine:schema:update">doctrine.schema_update_command</argument>
         <argument key="doctrine:schema:validate">doctrine.schema_validate_command</argument>
         <argument key="doctrine:mapping:import">doctrine.mapping_import_command</argument>
+        <argument key="doctrine:migrations:diff">doctrine_migrations.diff_command</argument>
+        <argument key="doctrine:migrations:dump-schema">doctrine_migrations.dump_schema_command</argument>
+        <argument key="doctrine:migrations:execute">doctrine_migrations.execute_command</argument>
+        <argument key="doctrine:migrations:generate">doctrine_migrations.generate_command</argument>
+        <argument key="doctrine:migrations:latest">doctrine_migrations.latest_command</argument>
+        <argument key="doctrine:migrations:migrate">doctrine_migrations.migrate_command</argument>
+        <argument key="doctrine:migrations:rollup">doctrine_migrations.rollup_command</argument>
+        <argument key="doctrine:migrations:status">doctrine_migrations.status_command</argument>
+        <argument key="doctrine:migrations:up-to-date">doctrine_migrations.up_to_date_command</argument>
+        <argument key="doctrine:migrations:version">doctrine_migrations.version_command</argument>
         <argument key="security:encode-password">security.command.user_password_encoder</argument>
         <argument key="debug:twig">twig.command.debug</argument>
         <argument key="lint:twig">twig.command.lint</argument>
@@ -5675,7 +5703,7 @@
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-    <service id=".service_locator.5iAgPfi" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.jhPAQB8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service" id="console.command.about"/>
@@ -5709,7 +5737,6 @@
         <argument key="doctrine.database_import_command" type="service" id="doctrine.database_import_command"/>
         <argument key="doctrine.ensure_production_settings_command" type="service" id="doctrine.ensure_production_settings_command"/>
         <argument key="doctrine.fixtures_load_command" type="service" id="doctrine.fixtures_load_command"/>
-        <argument key="doctrine.generate_entities_command" type="service" id="doctrine.generate_entities_command"/>
         <argument key="doctrine.mapping_convert_command" type="service" id="doctrine.mapping_convert_command"/>
         <argument key="doctrine.mapping_import_command" type="service" id="doctrine.mapping_import_command"/>
         <argument key="doctrine.mapping_info_command" type="service" id="doctrine.mapping_info_command"/>
@@ -5719,6 +5746,16 @@
         <argument key="doctrine.schema_drop_command" type="service" id="doctrine.schema_drop_command"/>
         <argument key="doctrine.schema_update_command" type="service" id="doctrine.schema_update_command"/>
         <argument key="doctrine.schema_validate_command" type="service" id="doctrine.schema_validate_command"/>
+        <argument key="doctrine_migrations.diff_command" type="service" id="doctrine_migrations.diff_command"/>
+        <argument key="doctrine_migrations.dump_schema_command" type="service" id="doctrine_migrations.dump_schema_command"/>
+        <argument key="doctrine_migrations.execute_command" type="service" id="doctrine_migrations.execute_command"/>
+        <argument key="doctrine_migrations.generate_command" type="service" id="doctrine_migrations.generate_command"/>
+        <argument key="doctrine_migrations.latest_command" type="service" id="doctrine_migrations.latest_command"/>
+        <argument key="doctrine_migrations.migrate_command" type="service" id="doctrine_migrations.migrate_command"/>
+        <argument key="doctrine_migrations.rollup_command" type="service" id="doctrine_migrations.rollup_command"/>
+        <argument key="doctrine_migrations.status_command" type="service" id="doctrine_migrations.status_command"/>
+        <argument key="doctrine_migrations.up_to_date_command" type="service" id="doctrine_migrations.up_to_date_command"/>
+        <argument key="doctrine_migrations.version_command" type="service" id="doctrine_migrations.version_command"/>
         <argument key="maker.auto_command.make_auth" type="service" id="maker.auto_command.make_auth"/>
         <argument key="maker.auto_command.make_command" type="service" id="maker.auto_command.make_command"/>
         <argument key="maker.auto_command.make_controller" type="service" id="maker.auto_command.make_controller"/>
@@ -5806,6 +5843,9 @@
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
+    <service id="cache.doctrine.orm.default.metadata.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter" public="false"/>
+    <service id="cache.doctrine.orm.default.result.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter" public="false"/>
+    <service id="cache.doctrine.orm.default.query.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter" public="false"/>
     <service id="cache.security_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
       <argument>5XxNxMQ1UJ</argument>
       <argument>0</argument>
@@ -5911,17 +5951,16 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default" public="false"/>
     <service id="Doctrine\DBAL\Driver\Connection" alias="doctrine.dbal.default_connection" public="false"/>
     <service id="Doctrine\DBAL\Connection" alias="doctrine.dbal.default_connection" public="false"/>
+    <service id="Doctrine\Persistence\ManagerRegistry" alias="doctrine" public="false"/>
     <service id="Doctrine\Common\Persistence\ManagerRegistry" alias="doctrine" public="false"/>
-    <service id="Symfony\Bridge\Doctrine\RegistryInterface" alias="doctrine" public="false"/>
     <service id="database_connection" alias="doctrine.dbal.default_connection" public="true"/>
     <service id="doctrine.dbal.event_manager" alias="doctrine.dbal.default_connection.event_manager" public="false"/>
-    <service id="Doctrine\Common\Persistence\ObjectManager" alias="doctrine.orm.default_entity_manager" public="false"/>
     <service id="Doctrine\ORM\EntityManagerInterface" alias="doctrine.orm.default_entity_manager" public="false"/>
     <service id="doctrine.orm.metadata.annotation_reader" alias="annotations.cached_reader" public="false"/>
     <service id="doctrine.orm.entity_manager" alias="doctrine.orm.default_entity_manager" public="true"/>
-    <service id="doctrine.orm.default_metadata_cache" alias="doctrine_cache.providers.doctrine.orm.default_metadata_cache" public="true"/>
-    <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache" public="true"/>
-    <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache" public="true"/>
+    <service id="doctrine.orm.default_metadata_cache" alias="doctrine.orm.cache.provider.cache.doctrine.orm.default.metadata" public="false"/>
+    <service id="doctrine.orm.default_result_cache" alias="doctrine.orm.cache.provider.cache.doctrine.orm.default.result" public="false"/>
+    <service id="doctrine.orm.default_query_cache" alias="doctrine.orm.cache.provider.cache.doctrine.orm.default.query" public="false"/>
     <service id="doctrine.orm.default_entity_manager.event_manager" alias="doctrine.dbal.default_connection.event_manager" public="false"/>
     <service id="Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface" alias="security.authorization_checker" public="false"/>
     <service id="Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface" alias="security.token_storage" public="false"/>
@@ -5952,6 +5991,18 @@
     <service id="argument_resolver.controller_locator" alias=".service_locator.GJmUZjJ"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
+    <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
+    <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
+    <service id="Psr\Log\LoggerInterface $cacheLogger" alias="monolog.logger.cache"/>
+    <service id="Psr\Log\LoggerInterface $translationLogger" alias="monolog.logger.translation"/>
+    <service id="Psr\Log\LoggerInterface $profilerLogger" alias="monolog.logger.profiler"/>
+    <service id="Psr\Log\LoggerInterface $phpLogger" alias="monolog.logger.php"/>
+    <service id="Psr\Log\LoggerInterface $eventLogger" alias="monolog.logger.event"/>
+    <service id="Psr\Log\LoggerInterface $routerLogger" alias="monolog.logger.router"/>
+    <service id="Psr\Log\LoggerInterface $httpClientLogger" alias="monolog.logger.http_client"/>
+    <service id="Psr\Log\LoggerInterface $doctrineLogger" alias="monolog.logger.doctrine"/>
+    <service id="Psr\Log\LoggerInterface $securityLogger" alias="monolog.logger.security"/>
+    <service id="Psr\Log\LoggerInterface $debugLogger" alias="monolog.logger.debug"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="translator.data_collector.inner" alias="translator.default" public="false"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
@@ -5968,19 +6019,5 @@
     <service id="argument_resolver.not_tagged_controller" alias="debug.argument_resolver.not_tagged_controller" public="false"/>
     <service id=".service_locator.tSKDlY7" alias=".1_ServiceLocator~nMnrD8L" public="false"/>
     <service id=".service_locator.VdFTLMb" alias=".service_locator.LtnrEkg" public="false"/>
-    <service id="console.command.public_alias.doctrine_cache.contains_command" alias="doctrine_cache.contains_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_cache.delete_command" alias="doctrine_cache.delete_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_cache.flush_command" alias="doctrine_cache.flush_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_cache.stats_command" alias="doctrine_cache.stats_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_migrations.diff_command" alias="doctrine_migrations.diff_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_migrations.dump_schema_command" alias="doctrine_migrations.dump_schema_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_migrations.execute_command" alias="doctrine_migrations.execute_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_migrations.generate_command" alias="doctrine_migrations.generate_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_migrations.latest_command" alias="doctrine_migrations.latest_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_migrations.migrate_command" alias="doctrine_migrations.migrate_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_migrations.rollup_command" alias="doctrine_migrations.rollup_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_migrations.status_command" alias="doctrine_migrations.status_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_migrations.up_to_date_command" alias="doctrine_migrations.up_to_date_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_migrations.version_command" alias="doctrine_migrations.version_command" public="true"/>
   </services>
 </container>

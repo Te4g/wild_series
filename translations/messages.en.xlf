@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="LPJNul_" resname="hello">
+        <source>hello</source>
+        <target>Hello</target>
+      </trans-unit>
+      <trans-unit id="CXmLOF4" resname="account.registration">
+        <source>account.registration</source>
+        <target>Register</target>
+      </trans-unit>
+      <trans-unit id="E_t5j6Q" resname="account.login">
+        <source>account.login</source>
+        <target>Sign In</target>
+      </trans-unit>
+      <trans-unit id="CDjx2ju" resname="hello_username">
+        <source>hello_username</source>
+        <target>Hello %username%</target>
+      </trans-unit>
+      <trans-unit id="Q7UTU9q" resname="account.logout">
+        <source>account.logout</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="0vYzlEB" resname="list.series">
+        <source>list.series</source>
+        <target>List of series</target>
+      </trans-unit>
+      <trans-unit id="bS4v84I" resname="list.seasons">
+        <source>list.seasons</source>
+        <target>List of seasons</target>
+      </trans-unit>
+      <trans-unit id="NAd6dqh" resname="list.episodes">
+        <source>list.episodes</source>
+        <target>List of episodes</target>
+      </trans-unit>
+      <trans-unit id="06x3Kl_" resname="list.actors">
+        <source>list.actors</source>
+        <target>List of actors</target>
+      </trans-unit>
+      <trans-unit id="Xc.7.ta" resname="list.comments">
+        <source>list.comments</source>
+        <target>List of comments</target>
+      </trans-unit>
+      <trans-unit id="KA1Eqx6" resname="welcome">
+        <source>welcome</source>
+        <target>Welcome</target>
+      </trans-unit>
+      <trans-unit id="KFxycBW" resname="&lt;h1&gt;hello_username&lt;/h1&gt;">
+        <source>&lt;h1&gt;hello_username&lt;/h1&gt;</source>
+        <target>Hi %username%</target>
+      </trans-unit>
+      <trans-unit id="WmOKEoy" resname="connect">
+        <source>connect</source>
+        <target>Sign in !</target>
+      </trans-unit>
+      <trans-unit id="pO8wS6Q" resname="language">
+        <source>language</source>
+        <target>Choose a language</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
